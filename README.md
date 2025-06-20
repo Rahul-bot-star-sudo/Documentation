@@ -2,6 +2,31 @@
 Her we see all command to use in dailly life.
 
 <div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
+  <h2 style="color: #2c3e50;">Navigate Folders using <code>cd</code></h2>
+
+  <p>The <code>cd</code> command is used in Git Bash (and Linux terminals) to move between folders (directories).</p>
+
+  <h3 style="color: #34495e;">🔹 Syntax</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #007acc; border-radius: 5px;">
+cd foldername
+  </pre>
+
+  <h3 style="color: #34495e;">🔹 Examples</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #27ae60; border-radius: 5px;">
+cd Documents
+cd ..
+cd ~
+  </pre>
+
+  <ul style="line-height: 1.6;">
+    <li><code>cd Documents</code> — Go inside the Documents folder</li>
+    <li><code>cd ..</code> — Move up one level (to parent folder)</li>
+    <li><code>cd ~</code> — Go to home directory</li>
+  </ul>
+</div>
+
+
+<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
   <h2 style="color: #2c3e50;">Clone a Git Repository</h2>
 
   <p>The <code>git clone</code> command is used to copy a Git repository from a remote server (like GitHub) to your local machine.</p>
