@@ -2,6 +2,27 @@
 Her we see all command to use in dailly life.
 
 <div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
+  <h2 style="color: #2c3e50;">Add and Commit Files in Git</h2>
+
+  <p>After you initialize a Git repository, files and folders will appear as <strong>untracked</strong>.</p>
+
+  <h3 style="color: #34495e;">🔹 Step 1: Add files to staging area</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #007acc;">
+git add git-commands
+  </pre>
+
+  <p>This tells Git to track the <code>git-commands</code> folder and prepare it for commit.</p>
+
+  <h3 style="color: #34495e;">🔹 Step 2: Commit the files</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #27ae60;">
+git commit -m "Initial commit with git-commands folder"
+  </pre>
+
+  <p>This creates a snapshot of the added files in the Git history.</p>
+</div>
+
+
+<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
   <h2 style="color: #2c3e50;">Navigate Folders using <code>cd</code></h2>
 
   <p>The <code>cd</code> command is used in Git Bash (and Linux terminals) to move between folders (directories).</p>
