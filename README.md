@@ -2,6 +2,27 @@
 Her we see all command to use in dailly life.
 
 <div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
+  <h2 style="color: #2c3e50;">Fix: Non-Fast-Forward Push Rejected</h2>
+
+  <p>If Git rejects your push with a <strong>non-fast-forward</strong> error, it means your local branch is behind the remote branch.</p>
+
+  <h3 style="color: #34495e;">🔧 Fix the Problem:</h3>
+
+  <ol style="line-height: 1.8;">
+    <li>Pull and merge changes from GitHub:
+      <pre style="background-color: #f4f4f4; padding: 10px;">git pull origin main --allow-unrelated-histories</pre>
+    </li>
+    <li>If there are merge conflicts, resolve them manually.</li>
+    <li>Then commit the merge and push again:
+      <pre style="background-color: #f4f4f4; padding: 10px;">git add .<br>git commit -m "Resolve merge conflict"<br>git push origin main</pre>
+    </li>
+  </ol>
+
+  <p>This allows you to sync with the remote repository and push your code successfully.</p>
+</div>
+
+
+<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
   <h2 style="color: #2c3e50;">Error: Not a Git Repository</h2>
 
   <p>If you see this error:</p>
