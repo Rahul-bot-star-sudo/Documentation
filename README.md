@@ -2,6 +2,25 @@
 Her we see all command to use in dailly life.
 
 <div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
+  <h2 style="color: #2c3e50;">Configure Git Globally</h2>
+  
+  <p>The <code>git config --global</code> command is used to set Git configuration values that apply to all your Git projects on your system.</p>
+
+  <h3 style="color: #34495e;">🔹 Set User Name</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #007acc;">
+git config --global user.name "Your Name"
+  </pre>
+
+  <h3 style="color: #34495e;">🔹 Set User Email</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #007acc;">
+git config --global user.email "you@example.com"
+  </pre>
+
+  <p>Once set, Git will use this name and email in all commits across your system.</p>
+</div>
+
+
+<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
   <h2 style="color: #2c3e50;">Show Current Directory with <code>pwd</code></h2>
   
   <p>The <code>pwd</code> command is used to display the full path of the current working directory in the terminal.</p>
