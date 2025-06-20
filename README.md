@@ -1,6 +1,37 @@
 # Git-commands
 Her we see all command to use in dailly life.
 
+<!-- git remote add Command -->
+<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
+  <h2 style="color: #2c3e50;">🔗 git remote add</h2>
+
+  <p>The <code>git remote add</code> command links your local repository to a remote server like GitHub.</p>
+
+  <h3>🔹 Syntax:</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px;">
+git remote add origin &lt;repository-url&gt;
+  </pre>
+
+  <h3>🔹 Example:</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px;">
+git remote add origin https://github.com/rahul/my-project.git
+  </pre>
+
+  <h3>🔎 Check Remote:</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px;">
+git remote -v
+  </pre>
+
+  <h3>❗ Reset Remote (if needed):</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px;">
+git remote remove origin
+git remote add origin &lt;new-url&gt;
+  </pre>
+
+  <p>This command is essential when you want to push your code to GitHub for the first time.</p>
+</div>
+
+
 <!-- mkdir Command Explanation -->
 <div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
   <h2 style="color: #2c3e50;">📁 mkdir Command</h2>
