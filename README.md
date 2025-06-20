@@ -1,6 +1,33 @@
 # Git-commands
 Her we see all command to use in dailly life.
 
+<!-- Git Push Command Explanation -->
+<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
+  <h2 style="color: #2c3e50;">Git Push Command</h2>
+
+  <p>The <code>git push</code> command is used to upload your local commits to a remote repository like GitHub.</p>
+
+  <h3 style="color: #34495e;">🔹 Usage:</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #007acc;">
+git push origin main
+  </pre>
+
+  <ul style="line-height: 1.6;">
+    <li><strong>origin</strong> → The name of the remote (GitHub)</li>
+    <li><strong>main</strong> → The branch name you’re pushing to</li>
+  </ul>
+
+  <h3 style="color: #34495e;">📌 Prerequisites:</h3>
+  <ul>
+    <li>Initialize repo with <code>git init</code></li>
+    <li>Connect to GitHub with <code>git remote add origin &lt;repo-url&gt;</code></li>
+    <li>Make commits before pushing</li>
+  </ul>
+
+  <p>After pushing, your code will appear on GitHub under the selected branch.</p>
+</div>
+
+
 <div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
   <h2 style="color: #2c3e50;">Fix: Non-Fast-Forward Push Rejected</h2>
 
