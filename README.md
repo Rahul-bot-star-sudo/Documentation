@@ -1,6 +1,28 @@
 # Git-commands
 Her we see all command to use in dailly life.
 
+<!-- mkdir Command Explanation -->
+<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
+  <h2 style="color: #2c3e50;">📁 mkdir Command</h2>
+
+  <p>The <code>mkdir</code> command is used to create new folders (directories) from the terminal.</p>
+
+  <h3>🔹 Syntax:</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px;">mkdir folder-name</pre>
+
+  <h3>🔹 Example:</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px;">mkdir my-project</pre>
+
+  <h3>✨ Advanced Usage:</h3>
+  <ul>
+    <li><code>mkdir folder1 folder2</code> → Creates multiple folders</li>
+    <li><code>mkdir -p parent/child</code> → Creates nested folders</li>
+  </ul>
+
+  <p>This command is useful when starting new projects or organizing files.</p>
+</div>
+
+
 <!-- Successful Git Force Push -->
 <div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
   <h2 style="color: #2c3e50;">✅ git push --force: Success!</h2>
