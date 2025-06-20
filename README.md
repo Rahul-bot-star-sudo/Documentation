@@ -2,6 +2,23 @@
 Her we see all command to use in dailly life.
 
 <div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
+  <h2 style="color: #2c3e50;">Show Current Directory with <code>pwd</code></h2>
+  
+  <p>The <code>pwd</code> command is used to display the full path of the current working directory in the terminal.</p>
+  
+  <h3 style="color: #34495e;">🔹 Usage</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #007acc;">
+pwd
+  </pre>
+
+  <p>Example output:</p>
+  <pre style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #27ae60;">
+/home/user/Desktop/my-folder
+  </pre>
+</div>
+
+
+<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
   <h2 style="color: #2c3e50;">Clear Terminal Screen</h2>
   
   <p>The <code>clear</code> command is used to clean the terminal window by removing all previous outputs.</p>
