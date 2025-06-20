@@ -2,6 +2,21 @@
 Her we see all command to use in dailly life.
 
 <div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
+  <h2 style="color: #2c3e50;">Set VS Code as Default Git Editor</h2>
+
+  <p>The following command sets Visual Studio Code as your default editor for Git operations:</p>
+
+  <pre style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #007acc;">
+git config --global core.editor "code --wait"
+  </pre>
+
+  <p><code>--wait</code> ensures Git pauses until you finish writing your message and close VS Code.</p>
+
+  <p>After setting this, Git will launch VS Code for tasks like writing commit messages.</p>
+</div>
+
+
+<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
   <h2 style="color: #2c3e50;">View Global Git Configuration</h2>
 
   <p>The <code>git config --global --list</code> command displays all the global configuration settings you've set in Git.</p>
