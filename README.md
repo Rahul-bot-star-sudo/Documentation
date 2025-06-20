@@ -312,7 +312,8 @@ ls
   <h3 style="color: #34495e;">🔹 Common Options</h3>
   <ul style="line-height: 1.6;">
     <li><code>ls -l</code> — Shows detailed info (permissions, size, date)</li>
-    <li><code>ls -a</code> — Shows hidden files (those starting with <code>.</code>)</li>
+    <li><code>ls -a</code> <code>ls -Force
+</code> — Shows hidden files (those starting with <code>.</code>)</li>
     <li><code>ls -la</code> — Combines <code>-l</code> and <code>-a</code></li>
     <li><code>ls -lh</code> — Shows human-readable file sizes</li>
     <li><code>ls foldername/</code> — Lists contents of a specific folder</li>
