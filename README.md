@@ -2,6 +2,37 @@
 Her we see all command to use in dailly life.
 
 <div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
+  <h2 style="color: #2c3e50;">Set VS Code as Git's Default Editor</h2>
+
+  <p>
+    You can configure Git to use <strong>Visual Studio Code</strong> as the default text editor using the command below:
+  </p>
+
+  <pre style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #007acc; border-radius: 5px;">
+git config --global core.editor "code --wait"
+  </pre>
+
+  <h3 style="color: #34495e;">🧠 What This Does:</h3>
+  <ul style="line-height: 1.6;">
+    <li><code>core.editor</code> tells Git which editor to use for commit messages, merge conflicts, etc.</li>
+    <li><code>code</code> runs Visual Studio Code.</li>
+    <li><code>--wait</code> tells Git to wait until you close VS Code before continuing.</li>
+  </ul>
+
+  <p>
+    This is especially useful if you want to write commit messages or resolve merge conflicts using the full power of VS Code.
+  </p>
+
+  <h3 style="color: #34495e;">✅ To Verify:</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #27ae60; border-radius: 5px;">
+git config --global --list
+  </pre>
+
+  <p>If you see <code>core.editor=code --wait</code> in the list, it's successfully configured.</p>
+</div>
+
+
+<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
   <h2 style="color: #2c3e50;">Set VS Code as Default Git Editor</h2>
 
   <p>The following command sets Visual Studio Code as your default editor for Git operations:</p>
