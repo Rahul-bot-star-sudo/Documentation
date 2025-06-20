@@ -1,6 +1,31 @@
 # Git-commands
 Her we see all command to use in dailly life.
 
+<!-- Git Branch Command -->
+<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
+  <h2 style="color: #2c3e50;">🌿 git branch</h2>
+
+  <p>The <code>git branch</code> command is used to manage branches in Git. A branch lets you work on new features without affecting the main code.</p>
+
+  <h3>🔹 View All Branches:</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px;">git branch</pre>
+
+  <h3>🔹 Create a New Branch:</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px;">git branch dev</pre>
+
+  <h3>🔹 Switch to a Branch:</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px;">git checkout dev</pre>
+
+  <h3>🔹 Rename Current Branch:</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px;">git branch -m main</pre>
+
+  <h3>🔹 Delete a Branch:</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px;">git branch -d dev</pre>
+
+  <p>Use branches to safely develop features, fix bugs, or experiment — all without touching your main project.</p>
+</div>
+
+
 <!-- git remote add Command -->
 <div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
   <h2 style="color: #2c3e50;">🔗 git remote add</h2>
