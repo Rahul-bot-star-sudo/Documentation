@@ -1,6 +1,34 @@
 # Git-commands
 Her we see all command to use in dailly life.
 
+<!-- Git Merge Command -->
+<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
+  <h2 style="color: #2c3e50;">🔀 git merge</h2>
+
+  <p>The <code>git merge</code> command is used to combine the work from one branch into another.</p>
+
+  <h3>✅ Example: Merge dev into main</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px;">
+git checkout main
+git merge dev
+  </pre>
+
+  <h3>⚠️ Handling Merge Conflicts</h3>
+  <ul>
+    <li>Open conflicting files and fix the code</li>
+    <li>Then run:
+      <pre>git add .</pre>
+      <pre>git commit -m "Resolved conflict"</pre>
+    </li>
+  </ul>
+
+  <h3>🧹 Clean Up</h3>
+  <pre>git branch -d dev</pre>
+
+  <p>Merging helps you bring together changes after working on features or fixes in separate branches.</p>
+</div>
+
+
 <!-- Git Branch Command -->
 <div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
   <h2 style="color: #2c3e50;">🌿 git branch</h2>
