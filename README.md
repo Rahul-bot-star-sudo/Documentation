@@ -1,6 +1,28 @@
 # Git-commands
 Her we see all command to use in dailly life.
 
+<!-- Git Init Command Explanation -->
+<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
+  <h2 style="color: #2c3e50;">Git Init Command</h2>
+
+  <p>The <code>git init</code> command is used to create a new Git repository. This initializes your project folder so Git can start tracking changes.</p>
+
+  <h3 style="color: #34495e;">🔹 Usage:</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #007acc;">
+git init
+  </pre>
+
+  <h3 style="color: #34495e;">🔹 What It Does:</h3>
+  <ul style="line-height: 1.8;">
+    <li>Creates a hidden <code>.git</code> folder inside your project.</li>
+    <li>Marks the folder as a Git repository.</li>
+    <li>Allows you to run other Git commands like <code>add</code>, <code>commit</code>, and <code>push</code>.</li>
+  </ul>
+
+  <p>After initializing, use <code>git status</code> to see the current state of your project.</p>
+</div>
+
+
 <!-- Git Push Command Explanation -->
 <div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
   <h2 style="color: #2c3e50;">Git Push Command</h2>
