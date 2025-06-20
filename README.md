@@ -2,6 +2,25 @@
 Her we see all command to use in dailly life.
 
 <div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
+  <h2 style="color: #2c3e50;">View Global Git Configuration</h2>
+
+  <p>The <code>git config --global --list</code> command displays all the global configuration settings you've set in Git.</p>
+
+  <h3 style="color: #34495e;">🔹 Usage</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #007acc;">
+git config --global --list
+  </pre>
+
+  <p>Example output:</p>
+  <pre style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #27ae60;">
+user.name=Your Name
+user.email=you@example.com
+core.editor=code --wait
+  </pre>
+</div>
+
+
+<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
   <h2 style="color: #2c3e50;">Configure Git Globally</h2>
   
   <p>The <code>git config --global</code> command is used to set Git configuration values that apply to all your Git projects on your system.</p>
