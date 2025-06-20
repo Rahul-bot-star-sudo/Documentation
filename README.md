@@ -2,6 +2,27 @@
 Her we see all command to use in dailly life.
 
 <div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
+  <h2 style="color: #2c3e50;">Clone a Git Repository</h2>
+
+  <p>The <code>git clone</code> command is used to copy a Git repository from a remote server (like GitHub) to your local machine.</p>
+
+  <h3 style="color: #34495e;">🔹 Syntax</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #007acc; border-radius: 5px;">
+git clone &lt;repository-url&gt;
+  </pre>
+
+  <h3 style="color: #34495e;">🔹 Example</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #27ae60; border-radius: 5px;">
+git clone https://github.com/octocat/Hello-World.git
+  </pre>
+
+  <p>This will download the <code>Hello-World</code> repository into your current folder.</p>
+
+  <p>You can now open the folder, view files, and start working on the project locally.</p>
+</div>
+
+
+<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
   <h2 style="color: #2c3e50;">Set VS Code as Git's Default Editor</h2>
 
   <p>
