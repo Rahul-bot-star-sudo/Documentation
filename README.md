@@ -2,6 +2,98 @@
 Her we see all command to use in dailly life.
 
 <div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
+  <h2 style="color: #2c3e50;">Error: Not a Git Repository</h2>
+
+  <p>If you see this error:</p>
+  <pre style="background-color: #ffecec; padding: 10px; border-left: 4px solid red; border-radius: 5px;">
+fatal: not a git repository (or any of the parent directories): .git
+  </pre>
+
+  <p>It means Git has not been initialized in the current folder.</p>
+
+  <h3 style="color: #34495e;">✅ How to Fix It</h3>
+  <ol style="line-height: 1.8;">
+    <li>Go to your project folder:
+      <pre style="background-color: #f4f4f4; padding: 5px;">cd your-folder-name</pre>
+    </li>
+    <li>Initialize a Git repository:
+      <pre style="background-color: #f4f4f4; padding: 5px;">git init</pre>
+    </li>
+    <li>Now check status again:
+      <pre style="background-color: #f4f4f4; padding: 5px;">git status</pre>
+    </li>
+  </ol>
+</div>
+
+
+<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
+  <h2 style="color: #2c3e50;">Add and Commit Files in Git</h2>
+
+  <p>After you initialize a Git repository, files and folders will appear as <strong>untracked</strong>.</p>
+
+  <h3 style="color: #34495e;">🔹 Step 1: Add files to staging area</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #007acc;">
+git add git-commands
+  </pre>
+
+  <p>This tells Git to track the <code>git-commands</code> folder and prepare it for commit.</p>
+
+  <h3 style="color: #34495e;">🔹 Step 2: Commit the files</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #27ae60;">
+git commit -m "Initial commit with git-commands folder"
+  </pre>
+
+  <p>This creates a snapshot of the added files in the Git history.</p>
+</div>
+
+
+<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
+  <h2 style="color: #2c3e50;">Navigate Folders using <code>cd</code></h2>
+
+  <p>The <code>cd</code> command is used in Git Bash (and Linux terminals) to move between folders (directories).</p>
+
+  <h3 style="color: #34495e;">🔹 Syntax</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #007acc; border-radius: 5px;">
+cd foldername
+  </pre>
+
+  <h3 style="color: #34495e;">🔹 Examples</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #27ae60; border-radius: 5px;">
+cd Documents
+cd ..
+cd ~
+  </pre>
+
+  <ul style="line-height: 1.6;">
+    <li><code>cd Documents</code> — Go inside the Documents folder</li>
+    <li><code>cd ..</code> — Move up one level (to parent folder)</li>
+    <li><code>cd ~</code> — Go to home directory</li>
+  </ul>
+</div>
+
+
+<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
+  <h2 style="color: #2c3e50;">Clone a Git Repository</h2>
+
+  <p>The <code>git clone</code> command is used to copy a Git repository from a remote server (like GitHub) to your local machine.</p>
+
+  <h3 style="color: #34495e;">🔹 Syntax</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #007acc; border-radius: 5px;">
+git clone &lt;repository-url&gt;
+  </pre>
+
+  <h3 style="color: #34495e;">🔹 Example</h3>
+  <pre style="background-color: #f4f4f4; padding: 10px; border-left: 4px solid #27ae60; border-radius: 5px;">
+git clone https://github.com/octocat/Hello-World.git
+  </pre>
+
+  <p>This will download the <code>Hello-World</code> repository into your current folder.</p>
+
+  <p>You can now open the folder, view files, and start working on the project locally.</p>
+</div>
+
+
+<div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
   <h2 style="color: #2c3e50;">Set VS Code as Git's Default Editor</h2>
 
   <p>
