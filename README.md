@@ -19,7 +19,11 @@ It runs on any system using the **Java Virtual Machine (JVM)**.
 
 ```java
 public class HelloWorld {
+<<<<<<< HEAD
   public static void main(String[] args) {
+=======
+    public static void main(String[] args) {
+>>>>>>> 6c973cc76862e5dbf021cd91882078d2694c5dd7
         System.out.println("Hello, World!");
     }
 }
