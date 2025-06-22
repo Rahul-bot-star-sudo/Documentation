@@ -32,7 +32,12 @@ git merge dev
 <!-- Git Branch Command -->
 <div style="font-family: Arial, sans-serif; font-size: 16px; color: #333;">
   <h2 style="color: #2c3e50;">🌿 git branch</h2>
-
+<h4>ye error ata hai agar branch name change ho to</h4>
+  <h5>
+    PS C:\Users\rahul\OneDrive\Desktop\core java\day-1> git push origin main
+error: src refspec main does not match any
+error: failed to push some refs to 'origin'
+  </h5>
   <p>The <code>git branch</code> command is used to manage branches in Git. A branch lets you work on new features without affecting the main code.</p>
 
   <h3>🔹 View All Branches:</h3>
