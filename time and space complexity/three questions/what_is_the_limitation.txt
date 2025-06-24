@@ -1,0 +1,16 @@
+Time and Space Complexity give us a high-level understanding of algorithm performance, but they have limitations:
+
+Ignore Constants and Real Execution Time:
+Big O notation doesn’t reflect actual time taken (like 1ms or 1s), just the growth rate. So, an O(n) algorithm with large constant factors can still be slower than an O(n²) one for small inputs.
+
+Assume Uniform Operations:
+It assumes all operations (e.g., +, -, memory access) take the same time, which isn't always true on real hardware.
+
+Doesn’t Consider Hardware & Environment:
+Actual performance also depends on CPU, RAM, cache, compiler optimizations, etc., which time complexity doesn’t cover.
+
+Worst-case Focus May Mislead:
+Sometimes, an algorithm with a bad worst-case (e.g., QuickSort) performs better on average than a more stable one (e.g., MergeSort).
+
+Space Complexity Ignores System Features:
+It doesn’t account for garbage collection, memory fragmentation, or actual RAM used.

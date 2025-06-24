@@ -1,0 +1,8 @@
+✅ In Simple English:
+Time and Space Complexity help us understand how efficient a program is.
+
+🔧 Type	📝 What it tells us
+
+Time Complexity	        How fast the program runs (based on input size)
+Space Complexity	    How much memory the program uses
+
