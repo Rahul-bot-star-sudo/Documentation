@@ -1,5 +1,4 @@
-
-  ﻿# MongoDB-Query
+﻿# MongoDB-Query
 
 aaj mainne mongd download kiya 
 fir mongo shell download kiya 
@@ -17,9 +16,9 @@ use latest_db
 >db.students.findOne({idCards.hasPanCards':true})
 Yahan ek basic **`README.md`** file hai jisme MongoDB install karne se lekar basic queries tak sab likha gaya hai. Aap isse apne project ke folder me `README.md` naam se save kar sakte ho:
 
----
 
-````markdown
+
+
 # 📦 MongoDB Setup and Basic Queries
 
 ## ✅ Step 1: Install MongoDB
