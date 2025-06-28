@@ -14,9 +14,6 @@ use latest_db
 >db.students.updateMany{$set:{hobbies: ['anime','cooking']}}
 >db.students.find({idCards.hasPanCards':true})
 >db.students.findOne({idCards.hasPanCards':true})
-Yahan ek basic **`README.md`** file hai jisme MongoDB install karne se lekar basic queries tak sab likha gaya hai. Aap isse apne project ke folder me `README.md` naam se save kar sakte ho:
-
-
 
 
 # 📦 MongoDB Setup and Basic Queries
