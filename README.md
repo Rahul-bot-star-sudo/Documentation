@@ -1,4 +1,24 @@
 
+  ﻿# MongoDB-Query
+
+aaj mainne mongd download kiya 
+fir mongo shell download kiya 
+maine net stop mongoDB command dekhi 
+maine net start mongoDB command dekhi 
+
+fir dekha ki sham mongo db ki query kaha run kar sakate hai mongodb://localhost:27017
+usame pahali query chalayi show dbs 
+use latest_db
+>db.students.insertOne({name:"ram",age:12})
+>db.students.find()
+>db.students.updateOne({name:"motu"},{$set:{idCards:{hasPanCard:true,hasAdharCard:true}}})
+>db.students.updateMany{$set:{hobbies: ['anime','cooking']}}
+>db.students.find({idCards.hasPanCards':true})
+>db.students.findOne({idCards.hasPanCards':true})
+Yahan ek basic **`README.md`** file hai jisme MongoDB install karne se lekar basic queries tak sab likha gaya hai. Aap isse apne project ke folder me `README.md` naam se save kar sakte ho:
+
+---
+
 ````markdown
 # 📦 MongoDB Setup and Basic Queries
 
@@ -141,25 +161,5 @@ db.students.deleteMany({ age: { $lt: 18 } })
 * Shell uses JavaScript syntax.
 * All commands are **case-sensitive**.
 
-
-  ﻿# MongoDB-Query
-
-aaj mainne mongd download kiya 
-fir mongo shell download kiya 
-maine net stop mongoDB command dekhi 
-maine net start mongoDB command dekhi 
-
-fir dekha ki sham mongo db ki query kaha run kar sakate hai mongodb://localhost:27017
-usame pahali query chalayi show dbs 
-use latest_db
->db.students.insertOne({name:"ram",age:12})
->db.students.find()
->db.students.updateOne({name:"motu"},{$set:{idCards:{hasPanCard:true,hasAdharCard:true}}})
->db.students.updateMany{$set:{hobbies: ['anime','cooking']}}
->db.students.find({idCards.hasPanCards':true})
->db.students.findOne({idCards.hasPanCards':true})
-Yahan ek basic **`README.md`** file hai jisme MongoDB install karne se lekar basic queries tak sab likha gaya hai. Aap isse apne project ke folder me `README.md` naam se save kar sakte ho:
-
----
 
 
