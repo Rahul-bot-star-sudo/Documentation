@@ -1,76 +1,93 @@
-# 📚 Centralized Documentation Repository
+# 📘 Daily Git Documentation - 30 June 2025
 
-### 🧠 Author: [Rahul](https://github.com/Rahul-bot-star-sudo)  
-### 📅 Date: 30 June 2025  
-
-This repository combines 5 different repositories into one centralized documentation project for easier access and long-term maintenance.
+## 👤 Author: Rahul Shinde
 
 ---
 
-## 📂 Merged Repositories
+## ✅ Summary of Work Done
 
-| Repository Name | Folder in This Repo |
-|-----------------|---------------------|
-| `-MongoDB-Query` | `MongoDB-Query/` |
-| `dsa-apna-college` | `dsa-apna-college/` |
-| `jdbc-sql` | `jdbc-sql/` |
-| `java-core` | `java-core/` |
-| `git-commands` | `git-commands/` |
+### 🧱 Folder Setup & Structuring
+
+- Created a central folder: `Documentation`
+- Added subfolders:
+  - `DSA-Notes`
+  - `Git-Commands`
+  - `MongoDB-Query`
+  - `Java-Core`
+  - `JDBC-SQL`
 
 ---
 
-## 🛠️ Merge Process Overview
+### 📁 Folder Migrations
 
-### ✅ Steps Followed:
+- Moved `README.md` file to `MongoDB-Query/`
+- Moved `git-commands/` content into `Git-Commands/`
+- Moved DSA folders (`Array`, `day 1`, `day-2`, `Patterns`, `Time Complexity`) into `DSA-Notes/`
+- Renamed folders:
+  - `Array` → `01-Array`
+  - `day 1` → moved to `Java-Core`
+  - `day-2 Patterns` → `02-Patterns` and moved to `Java-Core`
+  - `time and space complexity` → `03-Time-Space-Complexity`
+  - `dsa-apna-college` → `DSA-Notes`
+  - `git-commands` → `Git-Commands`
+  - `java-core` → `Java-Core`
+  - `jdbc-sql` → `JDBC-SQL`
 
-1. Cloned this `Documentation` repo.
-2. Added remote for each old repo using:
-   ```bash
-   git remote add <name> <repo-url>
-   git fetch <name>
-   git merge <name>/main --allow-unrelated-histories
-Resolved merge conflicts (mostly in README.md).
+---
 
-Moved all files into separate folders using:
+### ⚙️ Git Operations
+
+- ✅ Added and committed all moved and renamed folders.
+- ✅ Merged remote repo `dsa-apna-college` using:
+  ```bash
+  git remote add dsa <url>
+  git fetch dsa
+  git merge dsa/main --allow-unrelated-histories
+🔁 Faced merge commit editor screen (solved using default vim by pressing i, writing message, then Esc, :wq)
+
+⚠️ Faced "upstream gone" issue — skipped fixing as repo was local
+
+🧹 Cleanup and Best Practices
+❌ Removed all .class files using:
 
 bash
 Copy
 Edit
-mkdir <repo-name>
-for %f in (*) do move "%f" <repo-name>\
-git add .
-git commit -m "Moved files to <repo-name> folder"
-git remote remove <name>
-Pushed everything to GitHub using:
+git rm --cached -r *.class
+✅ Created .gitignore file and added rule to ignore .class files
 
-bash
+gitignore
 Copy
 Edit
-git push origin main
-⚠️ Common Issues & Solutions
-Problem	Fix
-Merge conflict in README.md	Manually edit and resolve
-Vim editor opens	Wrote message, then :wq to exit
-Remote already exists	git remote remove <name>
-File move error on Windows	Used for %f in (*) do move
-Upstream warning	git branch --set-upstream-to=origin/main
+*.class
+🔁 Errors Faced & Fixes
+Error Message	Solution
+LF will be replaced by CRLF	Git warning — safe to ignore
+The system cannot find the file specified	Checked folder names carefully using dir /b /ad
+Merge editor not closing	Used vim commands: i → write → Esc → :wq
+nothing to commit, working tree clean	Verified git status and re-added using git add .
+case-sensitive rename not recognized	Temporary rename trick: rename to temp → rename back
 
-🧹 Cleanup
-✅ All 5 original repositories were deleted after merging.
-
-Now everything is maintained under one single repo for easy management.
-
-📁 Final Folder Structure
-graphql
+🚀 Final Structure Snapshot
+sql
 Copy
 Edit
 Documentation/
+├── DSA-Notes/
+│   ├── 01-Array/
+│   ├── day-2/
+│   ├── 02-Patterns/
+│   └── 03-Time-Space-Complexity/
+├── Git-Commands/
 ├── MongoDB-Query/
-├── dsa-apna-college/
-├── jdbc-sql/
-├── java-core/
-├── git-commands/
-🏁 Conclusion
-Successfully merged and cleaned up 5 separate GitHub repositories into a centralized knowledge hub.
-
-This was a professional-level Git task involving remotes, merges, conflict resolution, folder structure, and push management.
+├── Java-Core/
+│   └── day-1/
+├── JDBC-SQL/
+└── README.md
+✅ Git Final Push
+bash
+Copy
+Edit
+git add .
+git commit -m "Structured folders, removed .class files, added .gitignore"
+git push origin main
