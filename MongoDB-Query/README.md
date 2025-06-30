@@ -1,11 +1,9 @@
-<<<<<<< HEAD
-"# Documentation Repo" 
-=======
-# MongoDB Practice - Student Collection
+
+# 📘 MongoDB Practice - Student Collection
 
 ## 📦 Description
-
-Yeh project MongoDB shell ke basic commands ke sath practice ke liye banaya gaya hai. Isme `students` naam ka ek collection banakar usme documents insert, update, aur find kiye gaye hain.
+Yeh project MongoDB shell ke basic commands ke sath practice ke liye banaya gaya hai.  
+Isme `students` naam ka ek collection banakar usme documents insert, update, aur find kiye gaye hain.
 
 ---
 
@@ -16,11 +14,12 @@ Yeh project MongoDB shell ke basic commands ke sath practice ke liye banaya gaya
 
 2. **Start MongoDB Server**  
    Start karne ke liye command:
+
    ```bash
    net start MongoDB
-````
+   ```
 
-3. **Stop MongoDB Server (Optional)**
+3. **Stop MongoDB Server (Optional)**  
    Band karne ke liye command:
 
    ```bash
@@ -143,26 +142,21 @@ db.students.findOne({ "idCards.hasPanCard": true })
 
 ## ✅ Notes
 
-* MongoDB me nested fields ko access karne ke liye `"field.subfield"` ka format use karte hain.
-* `updateMany` ke liye `filter` parameter (jaise `{}`) zaroori hai.
-* Agar `collection` ya `database` nahi mila to MongoDB automatically bana deta hai jab insert/update hota hai.
+- MongoDB me nested fields ko access karne ke liye `"field.subfield"` ka format use karte hain.
+- `updateMany` ke liye `filter` parameter (jaise `{}`) zaroori hai.
+- Agar `collection` ya `database` nahi mila to MongoDB automatically bana deta hai jab insert/update hota hai.
 
 ---
 
 ## 🧠 Future Practice Ideas
 
-* Sorting, Projection, Pagination
-* Aggregation pipelines
-* Indexing
-* Validation Schemas
+- Sorting, Projection, Pagination
+- Aggregation pipelines
+- Indexing
+- Validation Schemas
 
 ---
 
 ## 🙋 Author
 
 Made by **Rahul** – MongoDB Practice with ❤️
-
-```
-
-
->>>>>>> mongo/main
