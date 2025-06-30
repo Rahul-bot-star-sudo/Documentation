@@ -43,35 +43,40 @@
   git remote add dsa <url>
   git fetch dsa
   git merge dsa/main --allow-unrelated-histories
-🔁 Faced merge commit editor screen (solved using default vim by pressing i, writing message, then Esc, :wq)
+  ```
+- 🔁 Faced merge commit editor screen (solved using default `vim` by pressing `i`, writing message, then `Esc`, `:wq`)
+- ⚠️ Faced "upstream gone" issue — skipped fixing as repo was local
 
-⚠️ Faced "upstream gone" issue — skipped fixing as repo was local
+---
 
-🧹 Cleanup and Best Practices
-❌ Removed all .class files using:
+### 🧹 Cleanup and Best Practices
 
-bash
-Copy
-Edit
-git rm --cached -r *.class
-✅ Created .gitignore file and added rule to ignore .class files
+- ❌ Removed all `.class` files using:
+  ```bash
+  git rm --cached -r *.class
+  ```
+- ✅ Created `.gitignore` file and added rule to ignore `.class` files
+  ```gitignore
+  *.class
+  ```
 
-gitignore
-Copy
-Edit
-*.class
-🔁 Errors Faced & Fixes
-Error Message	Solution
-LF will be replaced by CRLF	Git warning — safe to ignore
-The system cannot find the file specified	Checked folder names carefully using dir /b /ad
-Merge editor not closing	Used vim commands: i → write → Esc → :wq
-nothing to commit, working tree clean	Verified git status and re-added using git add .
-case-sensitive rename not recognized	Temporary rename trick: rename to temp → rename back
+---
 
-🚀 Final Structure Snapshot
-sql
-Copy
-Edit
+## 🔁 Errors Faced & Fixes
+
+| Error Message | Solution |
+|---------------|----------|
+| `LF will be replaced by CRLF` | Git warning — safe to ignore |
+| `The system cannot find the file specified` | Checked folder names carefully using `dir /b /ad` |
+| `Merge editor not closing` | Used `vim` commands: `i` → write → `Esc` → `:wq` |
+| `nothing to commit, working tree clean` | Verified `git status` and re-added using `git add .` |
+| `case-sensitive rename not recognized` | Temporary rename trick: rename to temp → rename back |
+
+---
+
+## 🚀 Final Structure Snapshot
+
+```
 Documentation/
 ├── DSA-Notes/
 │   ├── 01-Array/
@@ -84,10 +89,14 @@ Documentation/
 │   └── day-1/
 ├── JDBC-SQL/
 └── README.md
-✅ Git Final Push
-bash
-Copy
-Edit
+```
+
+---
+
+## ✅ Git Final Push
+
+```bash
 git add .
 git commit -m "Structured folders, removed .class files, added .gitignore"
 git push origin main
+```
