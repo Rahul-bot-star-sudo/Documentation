@@ -1,0 +1,33 @@
+Great question: “Why do we learn Time and Space Complexity?”
+Let me explain it like you're in an interview, and then also like a student so it’s super clear.
+
+✅ Interview-style Answer:
+We learn Time and Space Complexity to analyze how efficient our code is as the input size grows. It's not enough for a program to work — it also needs to perform well, especially for large datasets.
+
+Understanding these concepts helps us:
+
+Choose the best algorithm for a problem.
+
+Optimize performance and reduce latency.
+
+Write scalable and maintainable software.
+
+Prepare for coding interviews where efficiency matters.
+
+Example:
+If you need to search a number in a list of 1 million items, using a binary search (O(log n)) is much faster than linear search (O(n)).
+
+//new
+
+🧠 Why do we need it? (What’s its job?)
+✅ To write faster code
+It helps us find which algorithm runs quickly when input becomes large.
+
+✅ To save memory
+We can choose ways that use less memory — important for mobile apps, games, etc.
+
+✅ To choose the best method
+When solving a problem, we may have 2-3 ways — complexity helps us pick the best one.
+
+✅ To prepare for interviews and real jobs
+All good companies ask this — because they care about performance.

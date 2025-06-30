@@ -1,0 +1,91 @@
+**2D Array** Java mein powerful hota hai jab aapko data ko grid, table, ya matrix form mein organize karna ho, **lekin iski kuch limitations bhi hoti hain**. Niche sabse important limitations diye gaye hain:
+
+---
+
+### 🚫 **Limitations of 2D Arrays in Java**
+
+#### 1. **Fixed Size**
+
+* Once declared, **size can't be changed** (e.g., `new int[3][3]` will always be 3×3).
+* Agar zyada ya kam space chahiye toh aapko naya array banana padega.
+
+📌 *Solution:* Use `ArrayList` of `ArrayList` (dynamic size) or collections like `List<List<Integer>>`.
+
+---
+
+#### 2. **Same Data Type Only**
+
+* Sirf **ek hi data type** ke elements store kar sakte ho.
+
+```java
+int[][] arr = new int[3][3];  // Only integers allowed
+```
+
+📌 *Solution:* Use objects or custom classes for mixed data.
+
+---
+
+#### 3. **No Built-in Functions**
+
+* Java arrays mein **built-in sorting, searching, etc. functions** nahi hote (as compared to Python lists or collections).
+* Aapko khud for-loops likhni padti hai.
+
+📌 *Solution:* Collections (like `ArrayList`, `HashMap`, etc.) have more features.
+
+---
+
+#### 4. **Wasted Memory (if sparse data)**
+
+* Agar aap mostly empty values store kar rahe ho (e.g., 90% `0`), toh memory waste hoti hai.
+
+📌 *Solution:* Use **sparse matrix representation** or advanced structures like `HashMap<Integer, HashMap<Integer, Integer>>`.
+
+---
+
+#### 5. **No Direct Column Operations**
+
+* Aap easily rows iterate kar sakte ho, **but columns ko handle karna tricky hota hai** (no direct built-in way).
+
+📌 *Solution:* Custom loops or use libraries like Apache Commons Math.
+
+---
+
+#### 6. **Less Flexible (No Labeling)**
+
+* Aap column ya row ko label (like in Excel: “Maths”, “Science”) nahi kar sakte.
+* Only index numbers (0, 1, 2...) available.
+
+📌 *Solution:* Use `Map<String, int[]>` or custom classes with named fields.
+
+---
+
+#### 7. **No Safety Checks**
+
+* If you try to access an invalid index like `arr[5][2]`, Java throws `ArrayIndexOutOfBoundsException`.
+
+📌 *Solution:* Always check array bounds manually or use safe collection APIs.
+
+---
+
+### 🟨 In Short:
+
+| Limitation            | Issue                   |
+| --------------------- | ----------------------- |
+| Fixed Size            | Can’t resize            |
+| Homogeneous Data      | Only one data type      |
+| Manual Operations     | No built-in sort/search |
+| Memory Waste          | For sparse data         |
+| Complex Column Access | No easy column tools    |
+| No Labels             | Only index-based access |
+| No Bounds Protection  | Runtime errors possible |
+
+---
+
+Agar aapko kisi specific use case ke liye 2D array ke alternative chahiye, toh main suggest kar sakta hoon:
+
+* `ArrayList<ArrayList<T>>`
+* `Map<String, int[]>`
+* Custom class structure
+* External libraries (like Apache Commons Math)
+
+Batayein aap kis problem ke liye use kar rahe hain — uske hisaab se best data structure recommend kar sakta hoon.
