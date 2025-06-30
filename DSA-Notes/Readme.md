@@ -1,3 +1,5 @@
+# Save the DSA Learning + Teaching Guide as a .md file
+
 dsa_guide_markdown = """
 # 🧠 DSA Sikhaane Ka Complete Roadmap (Teacher-Level Approach)
 
@@ -110,25 +112,7 @@ Stack<Integer> stack = new Stack<>();
 stack.push(10);
 stack.push(20);
 System.out.println(stack.pop()); // Output: 20
-🔁 Practice Flow
-Concept → Example → Diagram → Dry Run → Code → Problem Solve → Teach Back
-
-🚀 Ready to Start?
-Agar chaho to main tumhare liye:
-
-Daily ek topic (Array, Stack, Queue…)
-
-Concept notes + diagrams
-
-Practice questions (Easy → Hard)
-
-Teaching templates
-
-...sab kuch plan kar sakta hoon!
-
-Kya Stack se start karein ya Array/Search se? Batao!
-
-"""
+```
 # ✅ DSA Mastery Cheat Sheet (for Leetcode Hard Level)
 
 🎯 **“DSA Ka Brahmastra” – Har Top Developer ke Dimaag Mein Yehi Map Hota Hai**
