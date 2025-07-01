@@ -1,118 +1,3 @@
-# Save the DSA Learning + Teaching Guide as a .md file
-
-dsa_guide_markdown = """
-# 🧠 DSA Sikhaane Ka Complete Roadmap (Teacher-Level Approach)
-
----
-
-## ✅ 1. Concept ka Deep Understanding Lo
-
-Har DSA topic ke 3 layers:
-
-| Layer | Explanation                         |
-|-------|-------------------------------------|
-| What  | Yeh kya hai? (Definition)           |
-| Why   | Kyu zaruri hai? (Use-case / analogy)|
-| How   | Kaise kaam karta hai? (Working + code)|
-
-### 🧠 Example: Stack
-
-- **What:** Stack ek linear data structure hai, jisme insertion & deletion top se hota hai (LIFO).
-- **Why:** Undo feature, browser history, expression evaluation
-- **How:** Push/pop operations using array ya linked list
-
----
-
-## ✅ 2. Visual + Analogy Use Karo
-
-Best yaad karne ka tareeka:
-
-- Visual diagrams (Stack of plates, queue of people)
-- Real-life analogy:  
-  `Undo = Stack`, `Printer queue = Queue`
-
-🖼️ Use arrows, dry run, boxes etc.
-
----
-
-## ✅ 3. Pseudocode + Dry Run
-
-- Steps likho (pseudocode)
-- Flow chart banao
-- Dry run karo (manually trace every step)
-
----
-
-## ✅ 4. Khud Samjhao (Teach Back)
-
-- Mirror ke saamne explain karo
-- Mujhe likh ke ya audio/video bhejkar samjhao
-- Apne shabdon mein likho:  
-  `"Main stack ko aise samjhta hoon..."`
-
----
-
-## ✅ 5. Har Topic Pe 3 Level Practice
-
-| Level   | Examples                                      |
-|---------|-----------------------------------------------|
-| Easy    | Push/pop stack, reverse string, linear search |
-| Medium  | Valid parentheses, prefix evaluator           |
-| Hard    | Custom stack, recursion-based ops             |
-
----
-
-## ✅ 6. Notes Format Template
-
-| Topic | What | Why | How | Code Link | Analogy |
-|-------|------|-----|-----|-----------|---------|
-| Stack | LIFO | Undo, Call Stack | Push/Pop | GitHub Link | Plates Stack |
-
----
-
-## ✅ 7. Sikhaane Wala Mindset
-
-Sochna start karo:
-
-> “Main ise 10th class ke student ko kaise samjhaunga?”
-
-- Break concepts into small pieces
-- Use analogy + examples
-- Har step pe real-life relate karo
-
----
-
-## ✅ 8. Tools to Use
-
-- 🧾 Copy/Notebook – Dry run manually
-- 🧠 [pythontutor.com](https://pythontutor.com/) – Step-by-step visualization
-- 💻 Replit / VS Code – Code writing
-- 🃏 Flashcards – For TC / SC / Key logics
-
----
-
-## 🎓 Stack Teaching Demo (Short)
-
-**Step 1: Define karo**  
-“Stack ek data structure hai jisme hum data ko top par rakhte hain, aur wahi pehle remove karte hain – jaise plate stack.”
-
-**Step 2: Visual Dikhayein**  
-Bottom → [ 10, 20, 30 ] ← Top
-
-**Step 3: Operations**  
-Push(40): [10, 20, 30, 40]  
-Pop(): [10, 20, 30]
-
-**Step 4: Real Life Connection**  
-Undo, Call stack, Browser history
-
-**Step 5: Code Example**
-```java
-Stack<Integer> stack = new Stack<>();
-stack.push(10);
-stack.push(20);
-System.out.println(stack.pop()); // Output: 20
-```
 # ✅ DSA Mastery Cheat Sheet (for Leetcode Hard Level)
 
 🎯 **“DSA Ka Brahmastra” – Har Top Developer ke Dimaag Mein Yehi Map Hota Hai**
@@ -279,3 +164,119 @@ Agar tum chaho to main is cheat sheet ke base par:
 - Ek daily problem-solving routine bhi  
 
 **Batao tumhe kya chahiye next?**
+
+# Save the DSA Learning + Teaching Guide as a .md file
+
+dsa_guide_markdown = """
+# 🧠 DSA Sikhaane Ka Complete Roadmap (Teacher-Level Approach)
+
+---
+
+## ✅ 1. Concept ka Deep Understanding Lo
+
+Har DSA topic ke 3 layers:
+
+| Layer | Explanation                         |
+|-------|-------------------------------------|
+| What  | Yeh kya hai? (Definition)           |
+| Why   | Kyu zaruri hai? (Use-case / analogy)|
+| How   | Kaise kaam karta hai? (Working + code)|
+
+### 🧠 Example: Stack
+
+- **What:** Stack ek linear data structure hai, jisme insertion & deletion top se hota hai (LIFO).
+- **Why:** Undo feature, browser history, expression evaluation
+- **How:** Push/pop operations using array ya linked list
+
+---
+
+## ✅ 2. Visual + Analogy Use Karo
+
+Best yaad karne ka tareeka:
+
+- Visual diagrams (Stack of plates, queue of people)
+- Real-life analogy:  
+  `Undo = Stack`, `Printer queue = Queue`
+
+🖼️ Use arrows, dry run, boxes etc.
+
+---
+
+## ✅ 3. Pseudocode + Dry Run
+
+- Steps likho (pseudocode)
+- Flow chart banao
+- Dry run karo (manually trace every step)
+
+---
+
+## ✅ 4. Khud Samjhao (Teach Back)
+
+- Mirror ke saamne explain karo
+- Mujhe likh ke ya audio/video bhejkar samjhao
+- Apne shabdon mein likho:  
+  `"Main stack ko aise samjhta hoon..."`
+
+---
+
+## ✅ 5. Har Topic Pe 3 Level Practice
+
+| Level   | Examples                                      |
+|---------|-----------------------------------------------|
+| Easy    | Push/pop stack, reverse string, linear search |
+| Medium  | Valid parentheses, prefix evaluator           |
+| Hard    | Custom stack, recursion-based ops             |
+
+---
+
+## ✅ 6. Notes Format Template
+
+| Topic | What | Why | How | Code Link | Analogy |
+|-------|------|-----|-----|-----------|---------|
+| Stack | LIFO | Undo, Call Stack | Push/Pop | GitHub Link | Plates Stack |
+
+---
+
+## ✅ 7. Sikhaane Wala Mindset
+
+Sochna start karo:
+
+> “Main ise 10th class ke student ko kaise samjhaunga?”
+
+- Break concepts into small pieces
+- Use analogy + examples
+- Har step pe real-life relate karo
+
+---
+
+## ✅ 8. Tools to Use
+
+- 🧾 Copy/Notebook – Dry run manually
+- 🧠 [pythontutor.com](https://pythontutor.com/) – Step-by-step visualization
+- 💻 Replit / VS Code – Code writing
+- 🃏 Flashcards – For TC / SC / Key logics
+
+---
+
+## 🎓 Stack Teaching Demo (Short)
+
+**Step 1: Define karo**  
+“Stack ek data structure hai jisme hum data ko top par rakhte hain, aur wahi pehle remove karte hain – jaise plate stack.”
+
+**Step 2: Visual Dikhayein**  
+Bottom → [ 10, 20, 30 ] ← Top
+
+**Step 3: Operations**  
+Push(40): [10, 20, 30, 40]  
+Pop(): [10, 20, 30]
+
+**Step 4: Real Life Connection**  
+Undo, Call stack, Browser history
+
+**Step 5: Code Example**
+```java
+Stack<Integer> stack = new Stack<>();
+stack.push(10);
+stack.push(20);
+System.out.println(stack.pop()); // Output: 20
+```
