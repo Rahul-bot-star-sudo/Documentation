@@ -1,8 +1,9 @@
 import java.util.Scanner;
-
+import java.util.ArrayList;
 public class StudentManagement{
 	public static void main(String[]  args){
 		Scanner sc = new Scanner(System.in);
+		ArrayList<Student> students = new ArrayList<>();
 		int choice;
 
 		while(true){
@@ -14,13 +15,30 @@ public class StudentManagement{
 			// take user input
 			choice = sc.nextInt();
 
+			sc.nextLine(); // consume leftover newline
 			// handle user choice
 			switch (choice) {
 				case 1:
-					System.out.println("Feature to add student will go here.");
+					// Add student 
+					System.out.println("Enter name: ");
+					String name = sc.nextLine();
+					System.out.println("Enter roll number");	
+					int roll = sc. nextInt();
+					students.add(new Student(name, roll));
+					System.out.println("Student add successfully!");
+					
 					break;
 				case 2:
-					System.out.println("feature to view Students will go here.");
+					// View students 
+					if(students.isEmpty()) {
+						System.out.println("No student added yet.");
+					} else {
+						System.out.println("List of Student:");
+					
+						for( Student s : students) {
+							s.display();
+						}
+					}
 					break;
 				case 3:
 					System.out.println("Exiting the program. Goodbye!");
