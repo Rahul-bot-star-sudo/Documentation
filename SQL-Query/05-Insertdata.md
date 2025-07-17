@@ -15,6 +15,7 @@ stmt.executeUpdate(q);
 * show tables;
 * decs table_name;
 * select * from table1;
+* delet from col_name;
 
 ### take data from the user usin BufferedReader
 
