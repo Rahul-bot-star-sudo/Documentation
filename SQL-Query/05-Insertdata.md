@@ -15,3 +15,19 @@ stmt.executeUpdate(q);
 * show tables;
 * decs table_name;
 * select * from table1;
+
+### take data from the user usin BufferedReader
+
+**first you import the file**
+```
+import java.io.*;
+```
+#### take input from the user
+
+```sql
+            BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+            System.out.println("Enter your name : ");
+            String name = br.readLine();
+			System.out.println("Enter your city :");
+			String city = br.readLine();
+```
