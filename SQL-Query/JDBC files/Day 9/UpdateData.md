@@ -1,6 +1,3 @@
-यह Java प्रोग्राम एक JDBC (Java Database Connectivity) प्रोग्राम है जो किसी database की एक row को update करता है। नीचे मैं इसे पूरी तरह से step-by-step समझाता हूँ और इसमें जो concepts use हुए हैं, उन्हें भी explain करता हूँ।
-
----
 
 ## ✅ **Program का उद्देश्य**:
 
@@ -152,9 +149,3 @@ Enter the student id: 3
 ```
 done... 1 row(s) updated.
 ```
-
----
-
-अगर आप चाहें तो मैं `ConnectionProvider` class भी बना कर दे सकता हूँ जिससे यह पूरा JDBC प्रोग्राम run हो सके।
-
-क्या आप चाहेंगे कि मैं `ConnectionProvider.java` class का code भी दे दूं?
