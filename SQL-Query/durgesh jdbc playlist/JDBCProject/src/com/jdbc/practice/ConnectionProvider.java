@@ -1,29 +1,17 @@
 // This creates a package to store our program
 package com.jdbc.practice;
-//package com.jdbc.practice;
-//package com.jdbc.practice;
-//package com.jdbc.practice;
-
 // This line imports all SQL classes in Java
 import java.sql.*;
-//import java.sql.*;
-//import java.sql.*;
-//import java.sql.*;
 
 // This is a Java class named ConnectionProvider
 public class ConnectionProvider {
-//public class ConnectionProvider {
-//public class ConnectionProvider {}
-//public class ConnectionProvider{}
 
 // This method gives a connection to the database
     public static Connection getConnection() {
-        //public static Connection getConnection(){}
-
+     
         // Create a connection variable and set it to null (empty for now)
         Connection con = null;
-        //Connection con = null;
-
+       
         // Here, a connection to the database is created using try-catch
         try {
             // Load the MySQL JDBC driver class
@@ -36,14 +24,7 @@ public class ConnectionProvider {
             // Print the error details if something goes wrong
             e.printStackTrace();
         }
-        /*
-         * try{
-         * Class.forName(className:"com.mysql.cj.jdbc.Driver");
-         * con = DriverManager.getConnection(url:"jdbc:mysql://localhost:3306/world", user:"root", password:"Rahul@123");
-         * }catch{
-         * e.printStackTrace();
-         * }
-         */
+        
         return con;
     }
 }
