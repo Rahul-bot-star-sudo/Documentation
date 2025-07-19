@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pomodoro Tracker</title>
+  <style>
+    :root {
+      --primary: #ff6b6b;  /* Vibrant red for urgency */
+      --secondary: #48dbfb; /* Bright teal for contrast */
+      --accent: #feca57;   /* Golden yellow for accents */
+      --background: #1e272e; /* Dark slate background */
+      --text: #f5f6fa;    /* Off-white for text */
+      --highlight: #ff9f43; /* Orange for highlights */
+      --progress: #1dd1a1; /* Teal-green for progress */
+      --break: #9c88ff;   /* Soft purple for breaks */
+      --container-bg: #2f3640; /* Slightly lighter dark for container */
+      --focus-blue: #54a0ff; /* Bright blue for focus elements */
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      background-color: var(--background);
+      margin: 0;
+      padding: 20px;
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+      padding: 20px;
+      background-color: var(--container-bg);
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      margin-top: 30px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    h1 {
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-size: 2.5rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .subtitle {
+      color: var(--text);
+      opacity: 0.8;
+      margin-bottom: 30px;
+      font-size: 1.1rem;
+    }
+
+    #timer {
+      font-size: 5rem;
+      margin: 20px 0;
+      color: var(--focus-blue);
+      font-weight: bold;
+      font-family: 'Courier New', monospace;
+      text-shadow: 0 0 10px rgba(84, 160, 255, 0.3);
+    }
+
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 30px;
+      flex-wrap: wrap;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      background-color: var(--accent);
+      color: #1e272e;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-weight: 600;
+      min-width: 120px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+      opacity: 0.9;
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    #startBtn {
+      background-color: var(--progress);
+      color: var(--background);
+    }
+
+    #pauseBtn {
+      background-color: var(--primary);
+      color: white;
+    }
+
+    #resetBtn {
+      background-color: #576574;
+      color: white;
+    }
+
+    #completeBtn {
+      background-color: var(--secondary);
+      color: var(--background);
+    }
+
+    .stats-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 30px;
+    }
+
+    .stat-box {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+      min-width: 200px;
+      flex: 1;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .stat-title {
+      font-size: 1rem;
+      color: var(--text);
+      opacity: 0.8;
+      margin-bottom: 5px;
+    }
+
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--secondary);
+    }
+
+    .progress-container {
+      width: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+      border-radius: 10px;
+      margin: 10px 0;
+      height: 20px;
+      overflow: hidden;
+    }
+
+    .progress-bar {
+      height: 100%;
+      background-color: var(--progress);
+      width: 0%;
+      transition: width 0.5s ease;
+      box-shadow: 0 0 10px rgba(29, 209, 161, 0.3);
+    }
+
+    #clock {
+      position: fixed;
+      top: 10px;
+      left: 15px;
+      font-size: 1rem;
+      text-align: left;
+      color: var(--text);
+      line-height: 1.5;
+      background-color: var(--container-bg);
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .completed-section {
+      width: 100%;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .completed-section h3 {
+      color: var(--highlight);
+      margin-bottom: 20px;
+      font-size: 1.5rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0 auto;
+      background-color: var(--container-bg);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    th {
+      background-color: rgba(0, 0, 0, 0.3);
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    tr:nth-child(even) {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+
+    tr:hover {
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .mode-indicator {
+      margin-top: 10px;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .work-mode {
+      color: var(--focus-blue);
+      text-shadow: 0 0 8px rgba(84, 160, 255, 0.3);
+    }
+
+    .break-mode {
+      color: var(--break);
+      text-shadow: 0 0 8px rgba(156, 136, 255, 0.3);
+    }
+
+    /* Celebration Animation */
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: var(--highlight);
+      border-radius: 50%;
+      animation: fall 5s linear forwards;
+      z-index: 1000;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    .congratulations {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: var(--container-bg);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      z-index: 1001;
+      text-align: center;
+      max-width: 80%;
+      display: none;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .congratulations h2 {
+      color: var(--accent);
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    .congratulations p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+
+    .close-btn {
+      background-color: var(--progress);
+      color: var(--background);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* Notification Bar */
+    #notificationBar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background-color: var(--container-bg);
+      color: var(--text);
+      padding: 10px;
+      text-align: center;
+      font-size: 1rem;
+      z-index: 1000;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    #notificationContent {
+      flex-grow: 1;
+      text-align: center;
+    }
+
+    #notificationClose {
+      background: none;
+      border: none;
+      color: var(--text);
+      font-size: 1.2rem;
+      cursor: pointer;
+      padding: 0 10px;
+    }
+
+    /* Dark mode specific adjustments */
+    .work-mode-background {
+      background-image: linear-gradient(
+        to bottom right,
+        rgba(84, 160, 255, 0.03),
+        rgba(255, 107, 107, 0.03)
+      );
+    }
+
+    .break-mode-background {
+      background-image: linear-gradient(
+        to bottom right,
+        rgba(156, 136, 255, 0.03),
+        rgba(72, 219, 251, 0.03)
+      );
+    }
+
+    @media (max-width: 768px) {
+      #timer {
+        font-size: 3.5rem;
+      }
+      
+      .button-group {
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      button {
+        width: 80%;
+      }
+      
+      .stats-container {
+        flex-direction: column;
+      }
+      
+      #clock {
+        position: static;
+        margin-bottom: 20px;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Rest of your HTML remains exactly the same -->
+  <div id="clock"></div>
+
+  <div class="container">
+    <h1>Pomodoro Timer</h1>
+    <p class="subtitle">Stay focused and productive with the 25-minute work sessions</p>
+    
+    <div id="timer">25:00</div>
+    
+    <div id="modeIndicator" class="mode-indicator work-mode">Work Mode</div>
+    
+    <div class="button-group">
+      <button id="startBtn" onclick="startTimer()">Start</button>
+      <button id="pauseBtn" onclick="pauseTimer()">Pause</button>
+      <button id="resetBtn" onclick="resetTimer()">Reset</button>
+      <button id="completeBtn" onclick="completePomodoro()">Complete</button>
+    </div>
+    
+    <div class="stats-container">
+      <div class="stat-box">
+        <div class="stat-title">Today's Pomodoros</div>
+        <div id="pomodoroCount" class="stat-value">0</div>
+        <div class="progress-container">
+          <div id="dailyProgressBar" class="progress-bar"></div>
+        </div>
+        <div id="progressPercent">0% (0/12)</div>
+      </div>
+      
+      <div class="stat-box">
+        <div class="stat-title">Actual Focus Time</div>
+        <div id="actualTime" class="stat-value">0 min</div>
+        <div class="progress-container">
+          <div id="actualTimeBar" class="progress-bar" style="background-color: var(--highlight);"></div>
+        </div>
+        <div id="actualTimePercent">0% of target</div>
+      </div>
+    </div>
+    
+    <div class="completed-section">
+      <h3>Completed Pomodoros</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Time Completed</th>
+            <th>Duration</th>
+            <th>Type</th>
+            <th>Actual Time</th>
+            <th>Efficiency</th>
+          </tr>
+        </thead>
+        <tbody id="timeTable">
+          <!-- Rows will be added here dynamically -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- Notification Bar -->
+  <div id="notificationBar" style="display: none;">
+    <div id="notificationContent">Pomodoro is running - 25:00 remaining</div>
+    <button id="notificationClose" onclick="hideNotification()">×</button>
+  </div>
+
+  <!-- Congratulations Modal -->
+  <div id="congratulations" class="congratulations">
+    <h2>🎉 Congratulations! 🎉</h2>
+    <p id="congratsMessage">You've completed your Pomodoro session!</p>
+    <button class="close-btn" onclick="closeCongratulations()">Awesome!</button>
+  </div>
+
+  <!-- JavaScript remains exactly the same -->
+  <script>
+    // Pomodoro Timer Variables
+    let workMinutes = 25;
+    let breakMinutes = 5;
+    let isBreak = false;
+    let timeLeft = workMinutes * 60;
+    let timer;
+    let isRunning = false;
+    let startTime;
+    let actualFocusTime = 0;
+    let notificationTimer;
+
+    // Constants
+    const DAILY_TARGET = 12; // 12 pomodoros = 5 hours of focused work
+    const DAILY_TARGET_MINUTES = DAILY_TARGET * workMinutes;
+
+    // Local Storage Data
+    let pomodoroCount = parseInt(localStorage.getItem('pomodoroCount')) || 0;
+    let completedSessions = JSON.parse(localStorage.getItem('completedSessions')) || [];
+    let actualFocusTimes = JSON.parse(localStorage.getItem('actualFocusTimes')) || {};
+
+    // Service Worker Registration for Background Sync
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then(registration => {
+          console.log('ServiceWorker registration successful');
+        }).catch(err => {
+          console.log('ServiceWorker registration failed: ', err);
+        });
+      });
+    }
+
+    // Initialize display
+    document.getElementById('pomodoroCount').textContent = pomodoroCount;
+    updateDisplay();
+    updateProgressPercent();
+    updateActualTime();
+    updateCompletedTable();
+    updateClock();
+
+    // Update clock every second
+    setInterval(updateClock, 1000);
+
+    function updateDisplay() {
+      const minutes = Math.floor(timeLeft / 60).toString().padStart(2, '0');
+      const seconds = (timeLeft % 60).toString().padStart(2, '0');
+      document.getElementById('timer').textContent = `${minutes}:${seconds}`;
+      
+      // Update mode indicator
+      const modeElement = document.getElementById('modeIndicator');
+      if (isBreak) {
+        modeElement.textContent = "Break Mode";
+        modeElement.className = "mode-indicator break-mode";
+        document.body.className = "break-mode-background";
+      } else {
+        modeElement.textContent = "Work Mode";
+        modeElement.className = "mode-indicator work-mode";
+        document.body.className = "work-mode-background";
+      }
+
+      // Update notification bar if visible
+      updateNotification();
+    }
+
+    function updateNotification() {
+      const notification = document.getElementById('notificationBar');
+      if (notification.style.display === 'flex') {
+        const minutes = Math.floor(timeLeft / 60).toString().padStart(2, '0');
+        const seconds = (timeLeft % 60).toString().padStart(2, '0');
+        const mode = isBreak ? "Break" : "Work";
+        document.getElementById('notificationContent').textContent = 
+          `${mode} Timer - ${minutes}:${seconds} remaining`;
+      }
+    }
+
+    function showNotification() {
+      const notification = document.getElementById('notificationBar');
+      notification.style.display = 'flex';
+      updateNotification();
+    }
+
+    function hideNotification() {
+      document.getElementById('notificationBar').style.display = 'none';
+    }
+
+    function updatePomodoroCount() {
+      pomodoroCount++;
+      localStorage.setItem('pomodoroCount', pomodoroCount);
+      document.getElementById('pomodoroCount').textContent = pomodoroCount;
+      updateProgressPercent();
+    }
+
+    function updateProgressPercent() {
+      const percent = Math.min((pomodoroCount / DAILY_TARGET) * 100, 100);
+      document.getElementById('progressPercent').textContent = 
+        `${percent.toFixed(0)}% (${pomodoroCount}/${DAILY_TARGET})`;
+      document.getElementById('dailyProgressBar').style.width = `${percent}%`;
+      
+      saveTodayProgressPercent(percent);
+      updateWeeklyProgress();
+    }
+
+    function updateActualTime() {
+      // Calculate actual focus time percentage
+      const todayKey = new Date().toISOString().split('T')[0];
+      const todayActualTime = actualFocusTimes[todayKey] || 0;
+      actualFocusTime = todayActualTime;
+      
+      const percent = Math.min((todayActualTime / DAILY_TARGET_MINUTES) * 100, 100);
+      
+      document.getElementById('actualTime').textContent = `${todayActualTime} min`;
+      document.getElementById('actualTimeBar').style.width = `${percent}%`;
+      document.getElementById('actualTimePercent').textContent = `${percent.toFixed(0)}% of target`;
+    }
+
+    function saveTodayProgressPercent(percent) {
+      const today = new Date().toISOString().split('T')[0];
+      localStorage.setItem(`progress_${today}`, percent);
+    }
+
+    function updateWeeklyProgress() {
+      const today = new Date();
+      let total = 0;
+      let count = 0;
+
+      for (let i = 0; i < 7; i++) {
+        const date = new Date(today);
+        date.setDate(today.getDate() - i);
+        const key = `progress_${date.toISOString().split('T')[0]}`;
+        const value = parseFloat(localStorage.getItem(key));
+        if (!isNaN(value)) {
+          total += value;
+          count++;
+        }
+      }
+
+      const avg = count > 0 ? (total / count) : 0;
+    }
+
+    function addCompletedSession(actualDuration) {
+      const now = new Date();
+      const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      const dateString = now.toLocaleDateString();
+      const todayKey = now.toISOString().split('T')[0];
+      const efficiency = isBreak ? 0 : Math.min((workMinutes / actualDuration) * 100, 100);
+      
+      // Update actual focus time
+      if (!isBreak) {
+        actualFocusTime += actualDuration;
+        actualFocusTimes[todayKey] = (actualFocusTimes[todayKey] || 0) + actualDuration;
+        localStorage.setItem('actualFocusTimes', JSON.stringify(actualFocusTimes));
+        updateActualTime();
+      }
+      
+      completedSessions.unshift({
+        id: Date.now(),
+        time: timeString,
+        date: dateString,
+        duration: isBreak ? breakMinutes : workMinutes,
+        type: isBreak ? "Break" : "Work",
+        actualTime: isBreak ? 0 : actualDuration,
+        efficiency: efficiency.toFixed(0) + '%'
+      });
+      
+      // Keep only the last 50 sessions
+      if (completedSessions.length > 50) {
+        completedSessions = completedSessions.slice(0, 50);
+      }
+      
+      localStorage.setItem('completedSessions', JSON.stringify(completedSessions));
+      updateCompletedTable();
+    }
+
+    function updateCompletedTable() {
+      const tableBody = document.getElementById('timeTable');
+      tableBody.innerHTML = '';
+      
+      completedSessions.forEach((session, index) => {
+        const row = document.createElement('tr');
+        
+        row.innerHTML = `
+          <td>${index + 1}</td>
+          <td>${session.time} (${session.date})</td>
+          <td>${session.duration} min</td>
+          <td>${session.type}</td>
+          <td>${session.type === 'Work' ? session.actualTime + ' min' : '-'}</td>
+          <td>${session.efficiency}</td>
+        `;
+        
+        tableBody.appendChild(row);
+      });
+    }
+
+    function startTimer() {
+      if (!isRunning) {
+        isRunning = true;
+        startTime = new Date();
+        showNotification();
+        
+        timer = setInterval(() => {
+          if (timeLeft > 0) {
+            timeLeft--;
+            updateDisplay();
+          } else {
+            clearInterval(timer);
+            isRunning = false;
+
+            // Calculate actual time spent
+            const endTime = new Date();
+            const actualDuration = Math.round((endTime - startTime) / 60000); // in minutes
+
+            if (!isBreak) {
+              updatePomodoroCount();
+              addCompletedSession(actualDuration);
+              showCongratulations("Work session complete! Time for a break.", actualDuration);
+            } else {
+              showCongratulations("Break over! Back to work.", 0);
+            }
+
+            isBreak = !isBreak;
+            timeLeft = (isBreak ? breakMinutes : workMinutes) * 60;
+            updateDisplay();
+          }
+        }, 1000);
+      }
+    }
+
+    function pauseTimer() {
+      if (isRunning) {
+        clearInterval(timer);
+        isRunning = false;
+        
+        // Record actual time if this was a work session
+        if (!isBreak && startTime) {
+          const endTime = new Date();
+          const actualDuration = Math.round((endTime - startTime) / 60000); // in minutes
+          const todayKey = new Date().toISOString().split('T')[0];
+          
+          actualFocusTime += actualDuration;
+          actualFocusTimes[todayKey] = (actualFocusTimes[todayKey] || 0) + actualDuration;
+          localStorage.setItem('actualFocusTimes', JSON.stringify(actualFocusTimes));
+          updateActualTime();
+        }
+      }
+    }
+
+    function resetTimer() {
+      clearInterval(timer);
+      isRunning = false;
+      timeLeft = workMinutes * 60;
+      isBreak = false;
+      updateDisplay();
+      hideNotification();
+    }
+
+    function completePomodoro() {
+      if (!isBreak && isRunning) {
+        clearInterval(timer);
+        isRunning = false;
+        
+        // Calculate actual time spent
+        const endTime = new Date();
+        const actualDuration = Math.round((endTime - startTime) / 60000); // in minutes
+        
+        updatePomodoroCount();
+        addCompletedSession(actualDuration);
+        showCongratulations("Pomodoro manually completed! Take a break.", actualDuration);
+        
+        isBreak = true;
+        timeLeft = breakMinutes * 60;
+        updateDisplay();
+      } else if (!isBreak && !isRunning) {
+        // If not running but in work mode, start a new session and complete immediately
+        startTime = new Date();
+        const endTime = new Date();
+        const actualDuration = Math.round((endTime - startTime) / 60000) || 1; // minimum 1 minute
+        
+        updatePomodoroCount();
+        addCompletedSession(actualDuration);
+        showCongratulations("Pomodoro recorded! Take a break.", actualDuration);
+        
+        isBreak = true;
+        timeLeft = breakMinutes * 60;
+        updateDisplay();
+      } else {
+        alert("You are already on a break.");
+      }
+    }
+
+    function showCongratulations(message, actualDuration) {
+      const congratsDiv = document.getElementById('congratulations');
+      const messageDiv = document.getElementById('congratsMessage');
+      
+      // Custom message based on performance
+      let perfMessage = message;
+      if (actualDuration > 0) {
+        const efficiency = (workMinutes / actualDuration * 100).toFixed(0);
+        perfMessage += `<br><br>You focused for ${actualDuration} minutes (${efficiency}% efficiency)`;
+        
+        if (efficiency > 90) {
+          perfMessage += "<br>Excellent focus! 🚀";
+        } else if (efficiency > 70) {
+          perfMessage += "<br>Good job! 👍";
+        } else {
+          perfMessage += "<br>Try to minimize distractions next time!";
+        }
+      }
+      
+      messageDiv.innerHTML = perfMessage;
+      congratsDiv.style.display = 'block';
+      
+      // Create confetti
+      createConfetti();
+    }
+
+    function closeCongratulations() {
+      document.getElementById('congratulations').style.display = 'none';
+    }
+
+    function createConfetti() {
+      const colors = ['#ff6b6b', '#48dbfb', '#feca57', '#1dd1a1', '#9c88ff'];
+      const container = document.querySelector('.container');
+      
+      for (let i = 0; i < 100; i++) {
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random() * 100 + '%';
+        confetti.style.top = -10 + 'px';
+        confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+        confetti.style.width = Math.random() * 10 + 5 + 'px';
+        confetti.style.height = Math.random() * 10 + 5 + 'px';
+        confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+        container.appendChild(confetti);
+        
+        // Remove confetti after animation
+        setTimeout(() => {
+          confetti.remove();
+        }, 5000);
+      }
+    }
+
+    function updateClock() {
+      const now = new Date();
+      const time = now.toLocaleTimeString();
+      const options = { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' };
+      const date = now.toLocaleDateString('en-US', options);
+      document.getElementById('clock').innerHTML =
+        `<strong>Time:</strong> ${time}<br><strong>Date:</strong> ${date}`;
+    }
+
+    // Initialize weekly progress
+    updateWeeklyProgress();
+
+    // Make sure timer continues running even if tab is inactive
+    document.addEventListener('visibilitychange', function() {
+      if (document.hidden && isRunning) {
+        // Tab is hidden, but timer keeps running in background
+        console.log('Tab is hidden, but timer continues running');
+      }
+    });
+  </script>
+</body>
+</html>
