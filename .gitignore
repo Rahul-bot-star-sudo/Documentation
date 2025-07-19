@@ -1,3 +1,6 @@
 *.class 
 /SQL-Query/JDBC files/Day 9/JDBCProject/nbproject/private/
 /SQL-Query/JDBC files/Day 9/JDBCProject/build/
+/SQL-Query/JDBC files/Student Management System/nbproject/private/
+/SQL-Query/JDBCProject/build/
+/SQL-Query/JDBCProject/nbproject/private/

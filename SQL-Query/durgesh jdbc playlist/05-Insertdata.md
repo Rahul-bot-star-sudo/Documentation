@@ -16,6 +16,15 @@ stmt.executeUpdate(q);
 * decs table_name;
 * select * from table1;
 * delet from col_name;
+* mysql> SELECT id, LENGTH(pic) AS size_in_bytes FROM images;
+```
++----+---------------+
+| id | size_in_bytes |
++----+---------------+
+|  2 |        601291 |
+|  3 |        615124 |
++----+---------------+
+```
 
 ### take data from the user usin BufferedReader
 
