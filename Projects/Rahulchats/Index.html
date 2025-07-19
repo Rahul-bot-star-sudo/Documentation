@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rahul & Tejas Chat</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      width: 400px;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      overflow: hidden;
+    }
+    .login, .chat {
+      padding: 20px;
+      display: none;
+      flex-direction: column;
+    }
+    .login.active, .chat.active {
+      display: flex;
+    }
+    input, button {
+      padding: 10px;
+      margin-top: 10px;
+      font-size: 16px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: #4CAF50;
+      color: white;
+      cursor: pointer;
+      border: none;
+    }
+    .messages {
+      height: 300px;
+      overflow-y: auto;
+      border: 1px solid #eee;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    .message {
+      margin-bottom: 10px;
+      background: #e4e6eb;
+      padding: 8px;
+      border-radius: 8px;
+      position: relative;
+    }
+    .message.self {
+      background: #dcf8c6;
+      align-self: flex-end;
+      text-align: right;
+    }
+    .time {
+      font-size: 10px;
+      color: gray;
+      margin-top: 5px;
+    }
+    .seen {
+      font-size: 10px;
+      color: blue;
+    }
+    .edit-btn, .reply-btn {
+      font-size: 10px;
+      color: #555;
+      background: none;
+      border: none;
+      cursor: pointer;
+      margin-left: 5px;
+    }
+    .reply {
+      font-size: 12px;
+      color: #555;
+      background: #ddd;
+      padding: 4px;
+      border-radius: 4px;
+      margin-bottom: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="login active" id="loginPage">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username (Rahul/Tejas)">
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="login()">Login</button>
+  </div>
+
+  <div class="chat" id="chatPage">
+    <h2 id="welcome"></h2>
+    <div class="messages" id="messages"></div>
+    <input type="text" id="messageInput" placeholder="Type your message...">
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+<script>
+  const validUsers = ['rahul', 'tejas'];
+  const password = '1234';
+  let currentUser = '';
+  let replyTo = null;
+
+  const loginPage = document.getElementById('loginPage');
+  const chatPage = document.getElementById('chatPage');
+  const welcome = document.getElementById('welcome');
+  const messagesDiv = document.getElementById('messages');
+
+  function login() {
+    const username = document.getElementById('username').value.toLowerCase();
+    const pass = document.getElementById('password').value;
+    if (validUsers.includes(username) && pass === password) {
+      currentUser = username;
+      loginPage.classList.remove('active');
+      chatPage.classList.add('active');
+      welcome.innerText = `Welcome, ${capitalize(username)}!`;
+      loadMessages();
+      markSeen();
+    } else {
+      alert('Invalid Credentials!');
+    }
+  }
+
+  function sendMessage() {
+    const text = document.getElementById('messageInput').value.trim();
+    if (text === '') return;
+    const messages = JSON.parse(localStorage.getItem('chatMessages') || '[]');
+    const newMessage = {
+      id: Date.now(),
+      user: currentUser,
+      text: text,
+      time: new Date().toLocaleTimeString(),
+      seenBy: [currentUser],
+      replyTo: replyTo
+    };
+    messages.push(newMessage);
+    localStorage.setItem('chatMessages', JSON.stringify(messages));
+    document.getElementById('messageInput').value = '';
+    replyTo = null;
+    loadMessages();
+    markSeen();
+  }
+
+  function loadMessages() {
+    const messages = JSON.parse(localStorage.getItem('chatMessages') || '[]');
+    messagesDiv.innerHTML = '';
+    messages.forEach(msg => {
+      const div = document.createElement('div');
+      div.className = 'message' + (msg.user === currentUser ? ' self' : '');
+      
+      if (msg.replyTo) {
+        const replyMsg = messages.find(m => m.id === msg.replyTo);
+        if (replyMsg) {
+          const replyDiv = document.createElement('div');
+          replyDiv.className = 'reply';
+          replyDiv.innerText = `Replying to ${capitalize(replyMsg.user)}: ${replyMsg.text}`;
+          div.appendChild(replyDiv);
+        }
+      }
+
+      div.innerHTML += `<b>${capitalize(msg.user)}</b>: ${msg.text}
+      <div class="time">${msg.time} ${msg.seenBy.includes(getOtherUser()) ? '<span class="seen">✓ Seen</span>' : ''}</div>`;
+
+      if (msg.user === currentUser) {
+        div.innerHTML += `<button class="edit-btn" onclick="editMessage(${msg.id})">Edit</button>`;
+      }
+      div.innerHTML += `<button class="reply-btn" onclick="replyMessage(${msg.id})">Reply</button>`;
+      
+      messagesDiv.appendChild(div);
+    });
+    messagesDiv.scrollTop = messagesDiv.scrollHeight;
+  }
+
+  function editMessage(id) {
+    const messages = JSON.parse(localStorage.getItem('chatMessages') || '[]');
+    const msg = messages.find(m => m.id === id);
+    const newText = prompt('Edit your message:', msg.text);
+    if (newText !== null && newText.trim() !== '') {
+      msg.text = newText;
+      localStorage.setItem('chatMessages', JSON.stringify(messages));
+      loadMessages();
+    }
+  }
+
+  function replyMessage(id) {
+    replyTo = id;
+    document.getElementById('messageInput').focus();
+  }
+
+  function markSeen() {
+    const messages = JSON.parse(localStorage.getItem('chatMessages') || '[]');
+    messages.forEach(m => {
+      if (!m.seenBy.includes(currentUser)) {
+        m.seenBy.push(currentUser);
+      }
+    });
+    localStorage.setItem('chatMessages', JSON.stringify(messages));
+    loadMessages();
+  }
+
+  function capitalize(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
+  function getOtherUser() {
+    return validUsers.find(u => u !== currentUser);
+  }
+</script>
+
+</body>
+</html>
