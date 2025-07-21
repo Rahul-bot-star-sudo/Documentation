@@ -92,10 +92,4 @@ Aap ab seekh sakte ho:
 
 ---
 
-Aap mujhe batao:
-
-> ➤ Aapko ab SQL query kaise run karni hai Java se?
-> ➤ Select, insert, update, ya delete?
-
-Main full code ke sath samjha dunga 💻✅
 
