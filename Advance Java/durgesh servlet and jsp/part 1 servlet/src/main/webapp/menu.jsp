@@ -1,0 +1,13 @@
+<div class="menu_container">
+	<ul>
+		<li>
+		<a href="<%= application.getContextPath() %>/index.jsp">Home</a>
+		</li>
+		<li>
+		<a href="<%= application.getContextPath() %>/about.jsp">About</a>
+		</li>
+		<li>
+		<a href="<%= application.getContextPath() %>/servises.jsp">Servises</a>
+		</li>
+	</ul>
+</div>
