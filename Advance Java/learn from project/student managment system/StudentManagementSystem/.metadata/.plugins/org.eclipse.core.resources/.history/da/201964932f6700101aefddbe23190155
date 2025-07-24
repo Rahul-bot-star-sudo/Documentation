@@ -1,0 +1,21 @@
+body {
+    color: white;
+    background: #2C3930;
+}
+h1{
+	justify-content:center;
+	text-aline:center;
+}
+.menu_container{
+	justify-content:center;
+	text-aline:center;
+}
+.menu_container li a{
+	display:block;
+	color:white;
+	margin:10px 8px;
+}
+.menu_container ul{
+	list-style-type:none;
+	display:flex;
+}

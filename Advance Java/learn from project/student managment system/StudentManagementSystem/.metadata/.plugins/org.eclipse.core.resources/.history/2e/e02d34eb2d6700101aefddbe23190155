@@ -1,0 +1,8 @@
+body {
+    color: white;
+    background: #2C3930;
+}
+.menu h2{
+	justify-content:center;
+	text-aline:center;
+}

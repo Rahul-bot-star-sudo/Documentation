@@ -1,0 +1,27 @@
+body {
+    color: white;
+    background: #2C3930;
+    
+}
+
+.menu_container{
+	justify-content:center;
+	text-aline:center;
+}
+.menu_container ul li a{
+	display:block;
+	color:white;
+	margin:10px 8px;
+}
+.menu_container ul{
+	list-style-type:none;
+	display:flex;
+	color:white;
+}
+
+.container{
+justify-content:center;
+	align-items:center;
+	display :flex;
+	
+}

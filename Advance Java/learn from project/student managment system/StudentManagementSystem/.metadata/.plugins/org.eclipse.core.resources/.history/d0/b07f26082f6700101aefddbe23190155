@@ -1,0 +1,7 @@
+<div class="menu_container">
+	<ul>
+		<li>
+		<a href="<%= application.getContextPath() %>/index.jsp">Home</a>
+		</li>
+	</ul>
+</div>
