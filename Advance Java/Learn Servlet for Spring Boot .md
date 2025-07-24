@@ -9,5 +9,7 @@
 * <a href = "<%= application.getContextPath() %>/index.jsp">
 * version 10.1 is not support in eclips
 * we use 11 
+* create servlet first 
+* create servlet second
 
 

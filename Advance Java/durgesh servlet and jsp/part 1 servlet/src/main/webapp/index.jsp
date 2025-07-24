@@ -12,6 +12,13 @@
 <div class="container">
 	<h1>Welcome to aur jsp file</h1>
 	<%@ include file="menu.jsp" %>
+	
+	<form action="<%= request.getContextPath() %>/third" method="post">
+	<input type="test" paceholder="enter your massage" name="massage" />
+	<button type="submit">Submit</button>
+	
+	</form>
 	</div>
+	<script src="<%= request.getContextPath() %>/js/script.js"></script>
 </body>
 </html>
