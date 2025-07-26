@@ -1,0 +1,85 @@
+/* styles.css */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff4b1f, #1fddff);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+}
+
+.login-container:hover {
+    transform: translateY(-5px);
+}
+
+h2 {
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.form-control {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    color: white;
+    padding: 12px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.form-control:focus {
+    border-color: #ffdd57;
+    box-shadow: 0 0 10px rgba(255, 221, 87, 0.7);
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.btn-primary {
+    width: 100%;
+    background: linear-gradient(135deg, #ff6a00, #ee0979);
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #ee0979, #ff6a00);
+    transform: scale(1.05);
+}
+
+.alert {
+    background: rgba(255, 0, 0, 0.8);
+    color: white;
+    border-radius: 8px;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        width: 90%;
+    }
+}
+
