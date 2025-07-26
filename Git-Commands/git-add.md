@@ -1,4 +1,9 @@
 # git add command
+```
+git add file1.md file2.md file3.md
+git commit -m "Added 3 files"
+git push
+```
 
 ### ✅ `git add` Command Explained (in Hindi-friendly Simple Terms)
 
