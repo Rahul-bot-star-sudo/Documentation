@@ -1,26 +1,15 @@
 ## 📝 Table of Contents
 
 ## 📝 Table of Contents
-
-| 🧭 **Servlet Topics** | 📌 **JDBC Topics** |
-|----------------------|-------------------|
-| [1. Servlet](#1-servlet) | [2. JDBC](#2-jdbc) |
-| [Definition](#definition-what-is-the-concept) | [Definition](#definitionconcept-kya-hai) |
-| [Use](#use-kab-aur-kyu-use-hota-hai) | [Use](#use-kab-aur-kyu-use-hota-hai-1) |
-| [Code Example](#code-examplechhota-aur-clean) | [Code Example](#code-example-chota-aur-clean) |
-| [Analogy](#real-life-analogy-samajhne-me-esy-ho) | [Analogy](#real-life-analogy-samajhne-me-easy-ho) |
-| [Interview Qs](#interview-point-common-questions-ya-confusion) | [Interview Qs](#interview-point-common-questions-ya-confusion-1) |
-| [Servlet Life Cycle](#servlet-life-cycle-init-servicedestroy-methods) | [JDBC Steps](#jdbc-connection-steps) |
-| [GET vs POST](#difference-beetween-get-and-post-request) | [Statement vs PreparedStatement](#difference-between-statement-and-preparedstatement) |
-| [Session Management](#how-to-manage-session-in-servlet) | [Connection Pooling](#connection-pooling-kya-hai) |
-| [Exception Handling](#exception-handling-in-servlets) | [SQL Injection](#sql-injection-kya-hai-kaise-rokoge) |
-| [forward vs sendRedirect](#forward-vs-sendredirect) | [AutoCommit & Transaction](#autocommit--transaction-management-consetautocommitfalse-concommit-conrollbackatomic-operations-ke-liye) |
-| [ServletContext vs Config](#servletcontext-vs-servletconfig) | [Batch Processing](#batch-processing-multiple-queries-ek-hi-time-par--bhejna-stmtaddbatch-stmtexecutebatchperformance-improve-karne-ke-liye) |
-| [doGet vs doPost](#doget-vs-dopost-difference) | [Blob/Clob](#blobclob-handling-images-files-ya-large-text-database-me-storefetch-karna-rsgetblob-rsgetclob) |
-| [Filter](#filter-requestresponse-ko-process-karne-se-pahle-ya-bad-modify-kar-sakte-haineg-authentication-logging) | [CallableStatement](#callablestatement-stored-procedures-call-karna-callablestatement-cs--conpreparecall) |
-| [Listener](#listener-events-monitor-karne-ke-liye-session-createdestroyattribute-change-context-lifecycle) | [Metadata](#metadata-databasemetadata-resultsetmetadata-table-column-info-dynamically-lena) |
-| [Annotations](#annotations-webservlet-webfilter-weblister-modern-config-sirf-code-se-possible) | [Scrollable/Updatable ResultSet](#scrollableupdatable-resultset-resultsettype_scroll_insensitive-resultsetconcur_updatablerecords-backforth-padnaedit-karna) |
-| [Cookies/Headers](#cookiesheaders-management-custom-headercookie-setget-karna) | [Connection Pool Libraries](#connection-pool-library-use-eg-hikaricp-apache-dbcpproduction-me-fast-reusable-connections) |
+| 🧭 **Servlet Topics**                    | 📌 **JDBC Topics**                     | 🧭 **Servlet Topics (Extra)**         | 📌 **JDBC Topics (Extra)**            |
+|-----------------------------------------|----------------------------------------|---------------------------------------|----------------------------------------|
+| [1. What is Servlet?](#1-what-is-servlet)         | [1. What is JDBC?](#1-what-is-jdbc)            | [11. Filter](#11-filter)                        | [11. Batch Processing](#11-batch-processing)            |
+| [2. Servlet Lifecycle](#2-servlet-lifecycle)      | [2. JDBC Connection Steps](#2-jdbc-connection-steps) | [12. Listener](#12-listener)                    | [12. AutoCommit & Transactions](#12-autocommit--transaction-management) |
+| [3. doGet vs doPost](#3-doget-vs-dopost)          | [3. Statement vs PreparedStatement](#3-statement-vs-preparedstatement) | [13. Dispatcher](#13-dispatcher)               | [13. Scrollable ResultSet](#13-scrollableupdatable-resultset)       |
+| [4. Session Management](#4-session-management)    | [4. Connection Pooling](#4-connection-pooling) | [14. Annotations](#14-annotations)             | [14. MetaData](#14-metadata)                       |
+| [5. ServletConfig vs Context](#5-servletconfig-vs-context) | [5. SQL Injection](#5-sql-injection)     | [15. Exception Handling](#15-exception-handling) | [15. Blob/Clob](#15-blobclob-handling)             |
+| [6. Forward vs sendRedirect](#6-forward-vs-sendredirect) | [6. try-with-resources](#6-try-with-resources) | [16. Multipart File Upload](#16-multipart-file-upload) | [16. CallableStatement](#16-callablestatement)     |
+| [7. MVC Pattern](#7-mvc-pattern)         | [7. JDBC Interview Questions](#7-jdbc-interview-questions) | [17. Cookies & Headers](#17-cookies--headers) | [17. Connection Pool Libraries](#17-connection-pool-library-use) |
 
 # 1. Servlet 
 
