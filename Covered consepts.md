@@ -1,3 +1,6 @@
+past it every top of consept notes: `[⬅️ Back to Progress Table](../Covered%20consepts.md#tech-progress-tracker)
+`
+# Tech Progress Tracker
 | Java         | JDBC           | Servlet        | Spring Boot    | TypeScript     | Angular        | HTML         | CSS          | JavaScript     | MySQL         | MongoDB       |
 |--------------|----------------|----------------|----------------|----------------|----------------|--------------|--------------|----------------|---------------|---------------|
 |   [01-variables](Java-Core/01-Variables-And-Data-Types.md)           |                |                |                |                |                |              |              |                |               |               |
