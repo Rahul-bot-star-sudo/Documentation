@@ -4,7 +4,7 @@ past it every top of consept notes: `[⬅️ Back to Progress Table](../Covered%
 
 | Sr.No | Java | JDBC | Servlet | Spring Boot | TypeScript | Angular | HTML | CSS | JavaScript | MySQL | MongoDB | Git and GitHub |
 |:-----:|:----:|:----:|:-------:|:-----------:|:----------:|:-------:|:----:|:---:|:-----------:|:-----:|:-------:|:---------------:|
-| 1 | [01-Variables](Java-Core/01-Variables-And-Data-Types.md) |  |  |  |  |  |  |  |  |  |  |  |
+| 1 | [01-Variables](Java-Core/01-Variables-And-Data-Types.md) |  |  |  |  |  |  |  |  |  |  | [01-links](Git-Commands/01-links.md) |
 | 2 |  |  |  |  |  |  |  |  |  |  |  |  |
 | 3 |  |  |  |  |  |  |  |  |  |  |  |  |
 | 4 |  |  |  |  |  |  |  |  |  |  |  |  |
