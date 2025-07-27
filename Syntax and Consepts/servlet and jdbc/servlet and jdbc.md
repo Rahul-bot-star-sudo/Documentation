@@ -3,8 +3,8 @@
 ## 📝 Table of Contents
 | 🧭 **Servlet Topics**                    | 📌 **JDBC Topics**                     | 🧭 **Servlet Topics (Extra)**         | 📌 **JDBC Topics (Extra)**            |
 |-----------------------------------------|----------------------------------------|---------------------------------------|----------------------------------------|
-| [1. What is Servlet?](#1-what-is-servlet)         | [1. What is JDBC?](#1-what-is-jdbc)            | [11. Filter](#11-filter)                        | [11. Batch Processing](#11-batch-processing)            |
-| [2. Servlet Lifecycle](#2-servlet-lifecycle)      | [2. JDBC Connection Steps](#2-jdbc-connection-steps) | [12. Listener](#12-listener)                    | [12. AutoCommit & Transactions](#12-autocommit--transaction-management) |
+| [1. Servlet](#1-servlet)         | [1. JDBC](#1-jdbc)            | [11. Filter](#11-filter)                        | [11. Batch Processing](#11-batch-processing)            |
+| [Servlet life cycle](#servlet-life-cycle)      | [2. JDBC Connection Steps](#2-jdbc-connection-steps) | [12. Listener](#12-listener)                    | [12. AutoCommit & Transactions](#12-autocommit--transaction-management) |
 | [3. doGet vs doPost](#3-doget-vs-dopost)          | [3. Statement vs PreparedStatement](#3-statement-vs-preparedstatement) | [13. Dispatcher](#13-dispatcher)               | [13. Scrollable ResultSet](#13-scrollableupdatable-resultset)       |
 | [4. Session Management](#4-session-management)    | [4. Connection Pooling](#4-connection-pooling) | [14. Annotations](#14-annotations)             | [14. MetaData](#14-metadata)                       |
 | [5. ServletConfig vs Context](#5-servletconfig-vs-context) | [5. SQL Injection](#5-sql-injection)     | [15. Exception Handling](#15-exception-handling) | [15. Blob/Clob](#15-blobclob-handling)             |
@@ -39,7 +39,9 @@ Servlet ek waiter ki tarah kaam karta hai restaurant me customet order deta hai 
 
 ## Interview Point (Common Questions ya confusion)
 ## Servlet life cycle: What happens in init(), service(),destroy()?
-## Servlet life cycle (init, service,destroy methods)
+
+### Servlet life cycle
+
 ## Difference beetween GET and POST request
 ## How to manage session in servlet
 ## Exception handling in servlets
@@ -48,7 +50,7 @@ Servlet ek waiter ki tarah kaam karta hai restaurant me customet order deta hai 
 ## Session management: Cookies, URL Rewriting, HttpSession, hidden form fields
 ## doGet() vs doPost() difference 
   
-# 2. JDBC
+# 1. JDBC
 ## Definition(Concept kya hai)
 JDBC(Java database connectivity) ek java api hai jo java application ko database se connect karne, query run karne aur rsult receive karne ki facility deta hai.
 
