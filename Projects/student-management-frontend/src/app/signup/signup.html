@@ -1,0 +1,13 @@
+<form (ngSubmit)="onSubmit()" #signupForm="ngForm">
+
+	Name: <input type="text" name="username" [(ngModel)]="user.username" required />
+
+	Email: <input type="email" name="email" [(ngModel)]="user.email" required email />
+
+	Password: <input type="password" name="password" [(ngModel)]="user.password" required minlength="6" />
+
+	Confirm Password: <input type="password" name="confirmPassword" [(ngModel)] = "user.confirmPassword" required />
+
+	<button type = "submit" [disabled]="!signupForm.valid"> Sign Up </button> 
+
+</form>
