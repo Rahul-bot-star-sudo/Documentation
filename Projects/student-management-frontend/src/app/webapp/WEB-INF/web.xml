@@ -1,0 +1,9 @@
+<servlet>
+    <servlet-name>SignServlet</servlet-name>
+    <servlet-class>com.student.servlet.SignServlet</servlet-class>
+</servlet>
+
+<servlet-mapping>
+    <servlet-name>SignServlet</servlet-name>
+    <url-pattern>/signup</url-pattern>
+</servlet-mapping>
