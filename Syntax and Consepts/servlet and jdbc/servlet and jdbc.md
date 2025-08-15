@@ -1,15 +1,15 @@
 ## 📝 Table of Contents
-
 ## 📝 Table of Contents
-| 🧭 **Servlet Topics**                                                    | 📌 **JDBC Topics**                                                     | 🧭 **Servlet Topics (Extra)**                          | 📌 **JDBC Topics (Extra)**                                              |
-| ------------------------------------------------------------------------ | ---------------------------------------------------------------------- | ------------------------------------------------------ | ----------------------------------------------------------------------- |
-| [1. Servlet](#1-servlet)                                                 | [1. JDBC](#1-jdbc)                                                     | [11. Filter](#11-filter)                               | [11. Batch Processing](#11-batch-processing)                            |
-| [2. Servlet Life Cycle](#2-servlet-life-cycle)                           | [2. JDBC Connection Steps](#2-jdbc-connection-steps)                   | [12. Listener](#12-listener)                           | [12. AutoCommit & Transactions](#12-autocommit--transaction-management) |
-| [3. doGet vs doPost](#3-doget-vs-dopost)                                 | [3. Statement vs PreparedStatement](#3-statement-vs-preparedstatement) | [13. Dispatcher](#13-dispatcher)                       | [13. Scrollable ResultSet](#13-scrollableupdatable-resultset)           |
-| [4. Session Management](#4-session-management)                           | [4. Connection Pooling](#4-connection-pooling)                         | [14. Annotations](#14-annotations)                     | [14. MetaData](#14-metadata)                                            |
-| [5. ServletConfig vs ServletContext](#5-servletconfig-vs-servletcontext) | [5. SQL Injection](#5-sql-injection)                                   | [15. Exception Handling](#15-exception-handling)       | [15. Blob/Clob](#15-blobclob-handling)                                  |
-| [6. forward() vs sendRedirect()](#6-forward-vs-sendredirect)             | [6. try-with-resources](#6-try-with-resources)                         | [16. Multipart File Upload](#16-multipart-file-upload) | [16. CallableStatement](#16-callablestatement)                          |
-| [7. MVC Pattern](#7-mvc-pattern)                                         | [7. JDBC Interview Questions](#7-jdbc-interview-questions)             | [17. Cookies & Headers](#17-cookies--headers)          | [17. Connection Pool Libraries](#17-connection-pool-library-use)        |
+
+| 🧭 **Servlet Topics** | 📌 **JDBC Topics** | 🧭 **Servlet Topics (Extra)** | 📌 **JDBC Topics (Extra)** |
+|-----------------------|-------------------|-------------------------------|----------------------------|
+| [1. Servlet](#1-servlet) | [1. JDBC](#1-jdbc) | [11. Filter](#11-filter) | [11. Batch Processing](#11-batch-processing) |
+| [2. Servlet Life Cycle](#2-servlet-life-cycle) | [2. JDBC Connection Steps](#2-jdbc-connection-steps) | [12. Listener](#12-listener) | [12. AutoCommit & Transactions](#12-autocommit--transactions) |
+| [3. doGet vs doPost](#3-doget-vs-dopost) | [3. Statement vs PreparedStatement](#3-statement-vs-preparedstatement) | [13. Dispatcher](#13-dispatcher) | [13. Scrollable ResultSet](#13-scrollable-resultset) |
+| [4. Session Management](#4-session-management) | [4. Connection Pooling](#4-connection-pooling) | [14. Annotations](#14-annotations) | [14. MetaData](#14-metadata) |
+| [5. ServletConfig vs ServletContext](#5-servletconfig-vs-servletcontext) | [5. SQL Injection](#5-sql-injection) | [15. Exception Handling](#15-exception-handling) | [15. Blob/Clob](#15-blobclob) |
+| [6. forward() vs sendRedirect()](#6-forward-vs-sendredirect) | [6. try-with-resources](#6-try-with-resources) | [16. Multipart File Upload](#16-multipart-file-upload) | [16. CallableStatement](#16-callablestatement) |
+| [7. MVC Pattern](#7-mvc-pattern) | [7. JDBC Interview Questions](#7-jdbc-interview-questions) | [17. Cookies & Headers](#17-cookies--headers) | [17. Connection Pool Libraries](#17-connection-pool-libraries) |
 
 # 1. Servlet 
 
