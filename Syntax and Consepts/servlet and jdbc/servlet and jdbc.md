@@ -123,3 +123,336 @@ Batch Processing: Multiple queries ek hi time par * bhejna (stmt.addBatch(), stm
 ## CallableStatement: Stored procedures call karna (CallableStatement cs = con.prepareCall()).
 
 ## Connection Pool Library Use: (e.g., HikariCP, Apache DBCP)—production me fast, reusable connections.
+Theek hai Rahul 👍
+Main tumhare diye numbering ke hisaab se **poora Servlet + JDBC detailed handbook** bana deta hoon — har topic ke liye:
+
+* **Definition** (simple language)
+* **Use case**
+* **Code example**
+* **Real-life analogy**
+* **Important Interview Points**
+
+Main tumhe **Markdown format** me dunga taaki tum ise easily Eclipse notes, PDF, ya GitHub README me use kar sako.
+
+---
+
+## **1. Servlet**
+
+**Definition:**
+Servlet ek Java class hai jo server par run hoti hai aur client (browser) ke HTTP request ka response generate karti hai.
+
+**Use Case:**
+
+* Form data process karna
+* Database se data lena aur client ko bhejna
+* Dynamic HTML/JSON content generate karna
+
+**Code Example:**
+
+```java
+@WebServlet("/hello")
+public class HelloServlet extends HttpServlet {
+    protected void doGet(HttpServletRequest req, HttpServletResponse res)
+        throws ServletException, IOException {
+        res.setContentType("text/html");
+        PrintWriter out = res.getWriter();
+        out.println("<h1>Hello, Servlet!</h1>");
+        out.close();
+    }
+}
+```
+
+**Real-life Analogy:**
+Waiter jo customer ka order leke kitchen me bhejta hai aur wapas food laata hai.
+
+**Interview Points:**
+
+* Servlet life cycle
+* doGet vs doPost
+* forward() vs sendRedirect()
+
+---
+
+## **2. Servlet Life Cycle**
+
+**Phases:**
+
+1. **init()** → Servlet load hone par ek baar call hota hai.
+2. **service()** → Har request par call hota hai, request method ke hisaab se doGet/doPost call karta hai.
+3. **destroy()** → Server band hone par call hota hai.
+
+**Code Example:**
+
+```java
+public class LifeCycleServlet extends HttpServlet {
+    public void init() {
+        System.out.println("Servlet initialized");
+    }
+    public void service(HttpServletRequest req, HttpServletResponse res)
+        throws IOException {
+        res.getWriter().println("Request served");
+    }
+    public void destroy() {
+        System.out.println("Servlet destroyed");
+    }
+}
+```
+
+**Interview Tip:**
+
+* init() ek baar, service() multiple times, destroy() ek baar call hota hai.
+
+---
+
+## **3. Difference Between GET and POST Request**
+
+| Feature     | GET          | POST            |
+| ----------- | ------------ | --------------- |
+| Data in URL | Yes          | No              |
+| Max length  | \~2048 chars | No strict limit |
+| Security    | Less secure  | More secure     |
+| Use case    | Fetch data   | Submit data     |
+
+---
+
+## **4. How to Manage Session in Servlet**
+
+**Techniques:**
+
+* **Cookies**
+* **URL Rewriting**
+* **HttpSession**
+* **Hidden Form Fields**
+
+**Example:**
+
+```java
+HttpSession session = request.getSession();
+session.setAttribute("username", "Rahul");
+```
+
+---
+
+## **5. Exception Handling in Servlets**
+
+**Ways:**
+
+* try-catch in code
+* `error-page` in `web.xml`
+* `@WebServlet` with `@WebInitParam` and error mapping
+
+---
+
+## **6. forward() vs sendRedirect()**
+
+| Feature     | forward()           | sendRedirect() |
+| ----------- | ------------------- | -------------- |
+| Type        | Server-side         | Client-side    |
+| URL change  | No                  | Yes            |
+| Performance | Faster              | Slower         |
+| Use case    | Internal navigation | External link  |
+
+---
+
+## **7. ServletContext vs ServletConfig**
+
+| Feature | ServletContext        | ServletConfig             |
+| ------- | --------------------- | ------------------------- |
+| Scope   | Application-wide      | Per servlet               |
+| Access  | `getServletContext()` | `getServletConfig()`      |
+| Use     | Common settings       | Servlet-specific settings |
+
+---
+
+## **8. Session Management Methods**
+
+* **Cookies**
+* **URL Rewriting**
+* **HttpSession**
+* **Hidden Fields**
+
+---
+
+## **9. doGet() vs doPost()**
+
+* doGet() → URL parameters, for fetching data
+* doPost() → Body parameters, for submitting data
+
+---
+
+## **10. JDBC**
+
+**Definition:**
+Java API to connect and interact with databases.
+
+**Code Example:**
+
+```java
+Connection con = DriverManager.getConnection(
+    "jdbc:mysql://localhost:3306/dbname","user","password");
+Statement stmt = con.createStatement();
+ResultSet rs = stmt.executeQuery("SELECT * FROM users");
+```
+
+---
+
+## **11. Difference Between Statement and PreparedStatement**
+
+| Feature            | Statement      | PreparedStatement |
+| ------------------ | -------------- | ----------------- |
+| SQL Injection safe | No             | Yes               |
+| Performance        | Slower         | Faster            |
+| Use                | Simple queries | Repeated queries  |
+
+---
+
+## **12. Connection Pooling**
+
+Reusing DB connections for performance.
+Example: HikariCP, Apache DBCP.
+
+---
+
+## **13. SQL Injection & Prevention**
+
+**Bad:**
+
+```java
+"SELECT * FROM users WHERE name='" + name + "'"
+```
+
+**Good:**
+
+```java
+PreparedStatement ps = con.prepareStatement(
+ "SELECT * FROM users WHERE name=?");
+ps.setString(1, name);
+```
+
+---
+
+## **14. try-with-resources in JDBC**
+
+Auto-closes connections:
+
+```java
+try(Connection con = DriverManager.getConnection(...)) {
+    // work
+}
+```
+
+---
+
+## **15. JDBC Connection Steps**
+
+1. Load Driver (auto in latest Java)
+2. Get Connection
+3. Create Statement
+4. Execute Query
+5. Process Result
+6. Close resources
+
+---
+
+## **16. Filter**
+
+Modify request/response before reaching servlet.
+Use for logging, authentication.
+
+---
+
+## **17. Listener**
+
+Listens to events like session creation/destruction.
+
+---
+
+## **18. Exception Handling in Servlet (Advanced)**
+
+Use `error-page` in web.xml.
+
+---
+
+## **19. Multipart/Form-Data Handling**
+
+File upload handling using Servlet 3.0+ `.getPart()`.
+
+---
+
+## **20. Thread Safety in Servlet**
+
+Avoid instance variables or use synchronization.
+
+---
+
+## **21. Dispatcher (forward & include)**
+
+Forward request internally or include another resource’s output.
+
+---
+
+## **22. Servlet Annotations**
+
+* `@WebServlet`
+* `@WebFilter`
+* `@WebListener`
+
+---
+
+## **23. Cookies & Headers Management**
+
+Set and read cookies, set HTTP headers.
+
+---
+
+## **24. Batch Processing**
+
+```java
+stmt.addBatch("INSERT ...");
+stmt.executeBatch();
+```
+
+---
+
+## **25. AutoCommit & Transaction Management**
+
+```java
+con.setAutoCommit(false);
+con.commit();
+```
+
+---
+
+## **26. Scrollable & Updatable ResultSet**
+
+Move forward/back and update data in ResultSet.
+
+---
+
+## **27. MetaData in JDBC**
+
+* `DatabaseMetaData`
+* `ResultSetMetaData`
+
+---
+
+## **28. Blob & Clob Handling**
+
+Store/retrieve large binary/text data.
+
+---
+
+## **29. CallableStatement**
+
+Execute stored procedures.
+
+---
+
+## **30. Connection Pool Library Use**
+
+Use HikariCP, Apache DBCP for performance.
+
+---
+
+Rahul, agar tum chaho to main **is markdown ko style ke saath table of contents linked version** bana du, taaki tum click karke har topic par ja sako.
+Kya tum chahte ho main ab iska clickable TOC bana du?
