@@ -1,3 +1,5 @@
+### video link
+https://youtu.be/Byx4sgLR88E?si=E-ONcdkpT5GY9dug
 ### Learn Linux-command
 1. pwd --> how to check your current location
 2. whoami --> how to display name of current logged-in user
