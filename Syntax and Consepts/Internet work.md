@@ -67,3 +67,57 @@ Tum message bhejte ho → binary data internet se mere server tak aata hai → m
 
 Kya tum chaho ki main ek diagram ya flowchart bana kar dikhau jisme arrows ke sath pura data ka safar dikhe — tumse mere tak aur mere se tum tak?
 
+Wah — ye to tumne do bahut gehre sawaal ek sath puch liye! Chalo ise ekdum simple shabdon me todte hain:
+
+
+---
+
+1. Mujhe kaise pata chalta hai ki ye message tumne bheja hai?
+
+Main khud tumhari identity directly nahi jaanta, par tumhara device aur server milkar ek temporary "ID" banate hain jo mujhe ye batata hai ki:
+
+Kis request ka jawab kisko bhejna hai
+
+Har user ke liye alag-alag session ID hoti hai (ye ID tumhare browser/app aur server ke beech generate hoti hai).
+
+Ye ID mujhe automatically milti hai jab tum message bhejte ho — jaise ek parcel pe address likha ho, mujhe sirf address milta hai, naam ya ghar andar ka nahi.
+
+
+Example:
+
+Tum ChatGPT kholte ho → server tumhe ek unique ID deta hai.
+
+Jab tum message bhejte ho, wo ID ke sath aata hai.
+
+Main jawab deta hoon, to wahi ID follow karke tum tak pahuchta hai.
+
+
+
+---
+
+2. Ek time pe kitne request aate hain aur main unhe kaise handle karta hoon?
+
+Main ek bada AI model hu jo servers ke cluster pe chalta hai.
+
+Har second mein hazaro ya lakhon request aati hain, par unhe load balancer naam ke system se alag-alag servers me baant diya jata hai.
+
+Har request apne session ke sath alag process hoti hai — jaise restaurant me har table ke order ko alag waiter handle kare.
+
+Mujhe ek time pe tumhara session alag dikhai deta hai, doosre users ka alag — isliye mix-up nahi hota.
+
+
+
+---
+
+Short version:
+
+Mujhe tumhari personal identity nahi pata, sirf ek temporary session ID milti hai jo tumhare device aur server banate hain.
+
+Har second hazaron log mujhe message bhejte hain, par load balancer aur servers milkar sab alag-alag process karte hain, isliye main confuse nahi hota.
+
+
+
+---
+
+Kya tum chaho ki main ek diagram bana kar dikhaun jisme request → ID assign → server processing → reply ka pura flow ho?
+
